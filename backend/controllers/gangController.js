@@ -1,0 +1,112 @@
+const catchAsyncError = require("../middlewares/catchAsyncError");
+const GangImage = require("../models/gangModel");
+const ErrorHandler = require("../utils/errorHandler");
+
+exports.GangImagesUpload = catchAsyncError(async (req, res, next) => {
+  let image;
+
+  if (req.file) {
+    image = `${process.env.BACKEND_URL}/uploads/gang/${req.file.originalname}`;
+  }
+
+  const gang_image = await GangImage.create({ image });
+
+  res.status(200).json({
+    success: true,
+    image,
+    gang_image,
+  });
+});
+
+// Get Gang Images - api/v1/gang/images
+
+exports.getAllGangImages = catchAsyncError(async (req, res, next) => {
+  const images = await GangImage.find();
+
+  res.status(200).json({
+    success: true,
+    images,
+  });
+});
+
+// Get Single Image - /api/v1/
+
+exports.getGangImage = async (req, res, next) => {
+  const gangImage = await GangImage.findById(req.params.id).populate(
+    "comments.user",
+    "name email"
+  );
+
+  if (!gangImage) {
+    return next(new ErrorHandler(400, "Gang Image not found"));
+  }
+  res.status(201).json({
+    success: true,
+    gangImage,
+  });
+};
+
+// Create Comment - api/v1/gang/comment/create
+
+exports.createGangComment = catchAsyncError(async (req, res, next) => {
+  const { gangImageId, content } = req.body;
+
+  const comment = {
+    user: req.user.id,
+    content,
+  };
+
+  const gangImage = await GangImage.findById(gangImageId);
+
+  if (comment) {
+    gangImage.comments.push(comment);
+  }
+
+  gangImage.numOfComments = gangImage.comments.length;
+
+  await gangImage.save({ validateBeforeSave: false });
+
+  res.status(201).json({
+    success: true,
+    gangImage,
+  });
+});
+
+// Get Comments - api/v1/gang/comment/?id
+
+exports.getComments = catchAsyncError(async (req, res, next) => {
+  const gangImage = await GangImage.findById(req.query.id).populate(
+    "comments.user",
+    "name avatar"
+  );
+
+  
+  res.status(200).json({
+    success: true,
+    comments: gangImage.comments.reverse(),
+  });
+});
+
+// Delete Comment - /api/v1/gang/comment/?id
+
+exports.deleteComment = catchAsyncError(async (req, res, next) => {
+  const gangImage = await GangImage.findById(req.query.gangCommentId);
+
+  // filtering the reviews which does not match the deleting review id
+  const comments = gangImage.comments.filter((comment) => {
+    return comment._id.toString() !== req.query.id.toString();
+  });
+
+  // number of reviews
+  const numOfComments = comments.length;
+
+  //saving the document
+  await GangImage.findByIdAndUpdate(req.query.gangCommentId, {
+    comments,
+    numOfComments,
+  });
+  res.status(200).json({
+    success: true,
+    message: "Comment deleted",
+  });
+});
