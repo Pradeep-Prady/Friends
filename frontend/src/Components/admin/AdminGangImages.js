@@ -1,23 +1,29 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import { useDispatch, useSelector } from "react-redux";
-import { getGangImages } from "../../actions/gangImageActions";
+import { deleteGangImage, getGangImages } from "../../actions/gangImageActions";
 import ImageCard from "../layouts/Gang/ImageCard";
 import AdminBar from "./AdminBar";
 import MetaData from "./../layouts/MetaData";
 import { toast } from "react-hot-toast";
 import Loader from "../layouts/Loader";
+import { clearGangImageDeleted } from "../../slices/gangImageSlice";
 
 export default function AdminGangImages() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const { gangImages, loading, error } = useSelector(
+  const { gangImages, loading, isGangImageDeleted, error } = useSelector(
     (state) => state.gangImagesState
   );
+
+  const gotoDetails = (e, id) => {
+    navigate(`/admin/gang/${id}`);
+  };
 
   useEffect(() => {
     if (error) {
@@ -31,8 +37,9 @@ export default function AdminGangImages() {
         },
       });
     }
+
     dispatch(getGangImages());
-  }, [dispatch, error]);
+  }, [dispatch, error, isGangImageDeleted]);
 
   return (
     <>
@@ -68,7 +75,11 @@ export default function AdminGangImages() {
                   {gangImages && gangImages?.length > 0 ? (
                     gangImages.map((image) => (
                       <>
-                        <div className="pics" key={image._id}>
+                        <div
+                          className="pics"
+                          key={image._id}
+                          onClick={(e) => gotoDetails(e, image._id)}
+                        >
                           <img
                             key={image._id}
                             src={image.image}
@@ -78,7 +89,7 @@ export default function AdminGangImages() {
                       </>
                     ))
                   ) : (
-                    <></>
+                    <>No Images to display</>
                   )}
                 </div>
               </div>

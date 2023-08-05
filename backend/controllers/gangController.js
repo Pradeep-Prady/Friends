@@ -46,6 +46,21 @@ exports.getGangImage = async (req, res, next) => {
   });
 };
 
+exports.deleteGangImage = async (req, res, next) => {
+  const gangImage = await GangImage.findById(req.params.id);
+
+  if (!gangImage) {
+    return next(new ErrorHandler(400, "Gang Image not found"));
+  }
+
+  await GangImage.deleteOne({ _id: req.params.id });
+
+  res.status(201).json({
+    success: true,
+    message: "Gang Image deleted successfully",
+  });
+};
+
 // Create Comment - api/v1/gang/comment/create
 
 exports.createGangComment = catchAsyncError(async (req, res, next) => {
@@ -80,7 +95,6 @@ exports.getComments = catchAsyncError(async (req, res, next) => {
     "name avatar"
   );
 
-  
   res.status(200).json({
     success: true,
     comments: gangImage.comments.reverse(),

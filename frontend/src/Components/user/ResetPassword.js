@@ -64,7 +64,7 @@ export default function ResetPassword() {
     <>
       <MetaData title={"Reset Password"} />{" "}
       <div
-        className="w-full h-screen flex items-center justify-center text-white login"
+        className="w-full h-screen flex items-center justify-center text-black login"
         id="login"
       >
         <div className="w-11/12 sm:w-2/5 md:w-1/5 rounded-md  form-glass py-7 px-5">
@@ -77,7 +77,7 @@ export default function ResetPassword() {
               </div>
               <div className="flex ">
                 <input
-                  className="w-full outline-0  rounded-sm bg-transparent border-b-2"
+                  className="w-full outline-0  rounded-sm bg-transparent border-b-2 border-black"
                   type="password"
                   name="password"
                   value={password}
@@ -91,7 +91,7 @@ export default function ResetPassword() {
               </div>
               <div className="flex ">
                 <input
-                  className="w-full outline-0  rounded-sm bg-transparent border-b-2"
+                  className="w-full outline-0  rounded-sm bg-transparent border-b-2 border-black"
                   type="password"
                   name="password"
                   value={confirmPassword}

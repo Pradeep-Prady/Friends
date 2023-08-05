@@ -11,8 +11,8 @@ const gangImageSlice = createSlice({
 
     isGangImageCreated: false,
     isUserGangImageCreated: false,
+    isGangImageDeleted: false,
 
-    isProductDeleted: false,
     isProductUpdated: false,
   },
   reducers: {
@@ -72,6 +72,36 @@ const gangImageSlice = createSlice({
     clearGangImageCreated(state, action) {
       return { ...state, isGangImageCreated: false };
     },
+
+    // delete gang image
+
+    deleteGangImageRequest(state, action) {
+      return {
+        ...state,
+        loading: true,
+      };
+    },
+    deleteGangImageSuccess(state, action) {
+      return {
+        ...state,
+        loading: false,
+        isGangImageDeleted: true,
+      };
+    },
+    deleteGangImageFail(state, action) {
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    },
+    clearGangImageDeleted(state, action) {
+      return {
+        ...state,
+        isGangImageDeleted: false,
+      };
+    },
+
 
     // new user gang image creation
 
@@ -212,6 +242,11 @@ export const {
   clearError,
   clearGangImage,
   clearCommentSubmitted,
+
+  deleteGangImageRequest,
+  deleteGangImageSuccess,
+  deleteGangImageFail,
+  clearGangImageDeleted,
 
   newGangImageRequest,
   newGangImageSuccess,

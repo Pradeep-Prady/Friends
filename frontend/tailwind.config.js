@@ -15,7 +15,7 @@ const Myclass = plugin(function ({ addUtilities }) {
       "box-shadow": "0 4px 30px rgba(0, 0, 0, 0.1)",
       "backdrop-filter": "blur(4.1px)",
       "-webkit-backdrop-filter": "blur(4.1px)",
-      border: "1px solid rgba(255, 255, 255, 1)",
+      border: ".5px solid rgba(255, 255, 255, 1)",
     },
     ".head-font": {
       fontFamily: "Cabin Sketch, cursive",

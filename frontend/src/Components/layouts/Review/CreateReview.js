@@ -23,7 +23,7 @@ export default function CreateReview() {
   useEffect(() => {
     if (isReviewSubmitted) {
       dispatch(clearReviewSubmitted());
-      toast.success("Review Posted Successfully", {
+      toast.success("Gang Image Deleted Successfully", {
         position: "bottom-center",
         duration: 2000,
         style: {
@@ -53,23 +53,24 @@ export default function CreateReview() {
   }, [dispatch, error, isReviewSubmitted]);
 
   return (
-    <div className="w-full h-screen bg-stone-900 ">
+    <div className="w-full h-screen bg-stone-900 review ">
       <h2 className="text-center text-4xl font-light text-white pt-5">
         Write Review
       </h2>
 
       <div className="w-full h-full flex items-center justify-center">
-        <form className=" py-10 px-5 glass" onSubmit={submitHandler}>
+        <form className=" py-10 px-5 md:w-[500px] " onSubmit={submitHandler}>
           <textarea
+            style={{ resize: "none" }}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             type="text"
-            placeholder="enter review"
-            className="outline-none border-0 p-2 h-[100px] w-full bg-stone-950 text-white rounded-md"
+            placeholder="Please share your thoughts and write a review about your experience."
+            className="outline-none border-0 p-2 h-[200px] w-full form-glass text-white rounded-md scroll"
           />
           <button
             type="submit"
-            className="w-full my-2 py-2 bg-stone-950 text-white rounded-md"
+            className="w-full my-2 py-2 button-54-white text-black rounded-md"
           >
             Submit
           </button>

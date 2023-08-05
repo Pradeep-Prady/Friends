@@ -73,7 +73,7 @@
   }
 }
 
-
+.button-54-white,
 .button-54 {
   font-size: 16px;
   letter-spacing: 2px;
@@ -91,10 +91,14 @@
   touch-action: manipulation;
 }
 
-.button-54:active {
+.button-54:active,
+.button-54-white:active {
   box-shadow: 0px 0px 0px 0px;
   top: 5px;
   left: 5px;
+}
+.button-54-white {
+  color: aliceblue;
 }
 
 @media (min-width: 768px) {
@@ -105,7 +109,7 @@
 
 .login {
   position: relative;
-  background-image: url("./assets/images/login-sm.png");
+  background-image: url("./assets/images/c1.png");
   /* background-image: url("./assets/colors/blue.png"); */
 
   background-attachment: center;
@@ -124,18 +128,45 @@
   background-color: rgba(0, 0, 0, 0.2);
   pointer-events: none;
 }
-
+.review {
+  background-image: url("./assets/images/review-bg-sm.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.chatbg {
+  background-image: url("./assets/images/chatbg-sm.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.review-card{
+  background-image: url("./assets/images/review.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+}
+ 
 @media (min-width: 992px) {
   .login {
-    background-image: url("./assets/images/login-lg.png");
-    background-attachment: center;
-    background-repeat: no-repeat;
+    background-image: url("./assets/images/c1-lg.png");
+   
+  }
+  .review {
+    background-image: url("./assets/images/review-bg-md.png");
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
   }
+  .chatbg {
+    background-image: url("./assets/images/chatbg-sm.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 }
-
-
 
 @keyframes rotate360 {
   0% {
@@ -149,3 +180,79 @@
 .rotate-infinite {
   animation: rotate360 2s linear infinite;
 }
+
+.card {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-2 {
+  background-image: url("./assets/images/gang/manoj.jpg");
+}
+.card-3 {
+  background-image: url("./assets/images/gang/heymanth.jpg");
+}
+.card-4 {
+  background-image: url("./assets/images/gang/george.jpg");
+}
+.card-5 {
+  background-image: url("./assets/images/gang/cheni.jpg");
+}
+.card-6 {
+  background-image: url("./assets/images/gang/madhan.jpg");
+}
+.card-7 {
+  background-image: url("./assets/images/gang/sanjaykumar.jpg");
+}
+.card-8 {
+  background-image: url("./assets/images/gang/sathish.jpg");
+}
+.card-9 {
+  background-image: url("./assets/images/gang/sathishkumar.jpg");
+}
+.card-10 {
+  background-image: url("./assets/images/gang/satya.jpg");
+}
+.card-11 {
+  background-image: url("./assets/images/gang/sharvesh.jpg");
+}
+.card-12 {
+  background-image: url("./assets/images/gang/veer.jpg");
+}
+.card-13 {
+  background-image: url("./assets/images/gang/vijayaraja.jpg");
+}
+.card-14 {
+  background-image: url("./assets/images/gang/gokul.jpg");
+}
+
+.card-15 {
+  background-image: url("./assets/images/gang/hari.png");
+}
+.card-16 {
+  background-image: url("./assets/images/gang/nithin.jpg");
+}
+.card-17 {
+  background-image: url("./assets/images/gang/nk.jpg");
+}
+.card-18 {
+  background-image: url("./assets/images/gang/pavithran.jpg");
+}
+
+.card-19 {
+  background-image: url("./assets/images/gang/sanjay.jpg");
+}
+.card-20 {
+  background-image: url("./assets/images/gang/sivaprakash.png");
+}
+.card-21 {
+  background-image: url("./assets/images/gang/vignesh.png");
+}
+.card-22 {
+  background-image: url("./assets/images/gang/sanjayl.jpg");
+}
+.card-23 {
+  background-image: url("./assets/images/gang/pradeep.jpg");
+}
+

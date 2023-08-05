@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import img from "../../assets/images/login.jpg";
+import img from "../../assets/images/c1.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/userActions";
 import Loader from "./../layouts/Loader";
-import MetaData from './../layouts/MetaData';
+import MetaData from "./../layouts/MetaData";
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ export default function Profile() {
         <Loader />
       ) : (
         <>
-           <MetaData title={"Profile"} />
+          <MetaData title={"Profile"} />
           <div className="w-full h-screen overflow-hidden">
             <div className="flex items-center justify-center my-2">
               <div className="w-[100px] h-[100px]  bg-black rounded-md overflow-hidden">
@@ -48,7 +48,16 @@ export default function Profile() {
             </div>
 
             <div className="border-t-2 text-center">
-              <h2 className="py-2">Posts</h2>
+              <h2 className="py-2">
+                {" "}
+                <div className=" bottom-2 left-0 z-30 w-full flex items-center justify-center">
+                  <Link to="/gang/image/upload">
+                    <button className="bg-stone-950 py-1 px-3 text-white text-sm rounded-md ">
+                      Upload Images
+                    </button>
+                  </Link>
+                </div>
+              </h2>
             </div>
 
             <div className=" bg-black w-full bottom-0 right-0 fixed flex items-start justify-evenly p-3 md:p-5">

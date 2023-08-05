@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import img from "../../../assets/images/bg1.jpg";
-import img1 from "../../../assets/images/bg3.jpg";
+ 
 import ImageCard from "./ImageCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -57,13 +56,7 @@ export default function GangImages() {
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-2 left-0 z-30 w-full flex items-center justify-center">
-              <Link to="/gang/image/upload">
-                <button className="bg-stone-950 py-1 px-3 text-white text-sm rounded-md ">
-                  Upload Images
-                </button>
-              </Link>
-            </div>
+           
           </div>
         </>
       )}

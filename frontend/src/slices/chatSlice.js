@@ -4,6 +4,7 @@ const chatSlice = createSlice({
   name: "chat",
   initialState: {
     loading: false,
+    isChatCreated: false,
      
   },
   reducers: {
@@ -38,6 +39,7 @@ const chatSlice = createSlice({
         ...state,
         loading: false,
         chats: action.payload.chats,
+        isChatCreated: true,
       };
     },
     createChatFail(state, action) {
@@ -46,6 +48,12 @@ const chatSlice = createSlice({
         loading: false,
         error: action.payload.message,
       };
+    },
+    clearChatCreated(state, action) {
+      return{
+        ...state,
+        isChatCreated: false,
+      }
     },
 
     chatRequest(state, action) {
@@ -80,6 +88,7 @@ export const {
   chatRequest,
   chatSuccess,
   chatFail,
+  clearChatCreated,
 } = actions;
 
 export default reducer;

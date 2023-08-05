@@ -14,6 +14,9 @@ import {
   createCommentFail,
   createCommentRequest,
   createCommentSuccess,
+  deleteGangImageFail,
+  deleteGangImageRequest,
+  deleteGangImageSuccess,
   gangImageFail,
   gangImageRequest,
   gangImageSuccess,
@@ -60,6 +63,18 @@ export const createGangImage = (gangImageData) => async (dispatch) => {
     dispatch(newGangImageFail(error.response.data.message));
   }
 };
+
+export const deleteGangImage = (id) => async (dispatch) => {
+  try {
+    dispatch(deleteGangImageRequest());
+    const { data } = await axios.delete(`/api/v1/admin/gang/${id}`);
+    dispatch(deleteGangImageSuccess(data));
+  } catch (error) {
+    //handle error
+    dispatch(deleteGangImageFail(error.response));
+  }
+};
+
 
 export const getUserGangImages = () => async (dispatch) => {
   try {

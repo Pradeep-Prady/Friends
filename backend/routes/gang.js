@@ -9,6 +9,7 @@ const {
   createGangComment,
   getComments,
   getGangImage,
+  deleteGangImage,
 } = require("../controllers/gangController");
 const {
   authorizeRoles,
@@ -46,5 +47,9 @@ router
     upload.single("image"),
     GangImagesUpload
   );
+
+router
+  .route("/admin/gang/:id")
+  .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteGangImage);
 
 module.exports = router;

@@ -13,7 +13,7 @@ export default function ReviewCard({ review }) {
 
   return (
     <div>
-      <div className=" flex-none carousel-item w-[250px] p-5 mx-3 glass rounded-sm">
+      <div className=" flex-none carousel-item w-[250px] p-5 mx-3  review-card rounded-sm">
         <div className="flex justify-between my-2">
           <div>
             <img
@@ -22,15 +22,13 @@ export default function ReviewCard({ review }) {
               className="w-[50px] h-[50px] rounded-md"
             />
           </div>
-
           <div>
             <h3 className="text-sm font-semibold ">{review.user.name}</h3>
           </div>
         </div>
-        <p className="text-white ">{review.message}</p>
+        <p className="text-black ">{review.message}</p>
         <div className="flex justify-between mt-4">
           <p className="text-sm font-semibold">12.57</p>
-
           <p className="text-sm font-semibold">{formattedDate}</p>
         </div>
       </div>

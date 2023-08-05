@@ -27,6 +27,7 @@ import AdminGangImages from "./Components/admin/AdminGangImages";
 import UploadGangImage from "./Components/admin/UploadGangImage";
 import UserGangImages from "./Components/admin/UserGangImages";
 import GangImageUpload from "./Components/user/GangImageUpload";
+import GangImageDetail from "./Components/admin/GangImage/GangImageDetail";
 
 function App() {
   useEffect(() => {
@@ -149,6 +150,14 @@ function App() {
               element={
                 <ProtectedRoute isAdmin={true}>
                   <AdminGangImages />
+                </ProtectedRoute>
+              }
+            />
+               <Route
+              path="/admin/gang/:id"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <GangImageDetail />
                 </ProtectedRoute>
               }
             />
