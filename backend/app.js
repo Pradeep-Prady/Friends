@@ -26,6 +26,17 @@ app.use("/api/v1", gang);
 app.use("/api/v1", usergang);
 app.use("/api/v1/", review);
 
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  });
+}
+
+// DB_LOCAL_URlI=mongodb+srv://pradeepm:7pCddsXbkO4emMJG@foodstallcluster.oqyvzfb.mongodb.net/?retryWrites=true&w=majority
+
+
 app.use(errorMidleware);
 
 module.exports = app;

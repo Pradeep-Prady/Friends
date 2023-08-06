@@ -14,8 +14,15 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
   const { name, email, password } = req.body;
   let avatar;
 
+  let BASE_URL = process.env.BACKEND_URL;
+
+  if (process.env.NODE_ENV === "production") {
+    BASE_URL = `${req.protocol}://${req.get("host")}`;
+  }
+
+
   if (req.file) {
-    avatar = `${process.env.BACKEND_URL}/uploads/user/${req.file.originalname}`;
+    avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`;
   }
 
   const user = await User.create({
@@ -81,7 +88,13 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
 
   //create reset url
 
-  const resetUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+  let BASE_URL = process.env.FRONTEND_URL;
+
+  if (process.env.NODE_ENV === "production") {
+    BASE_URL = `${req.protocol}://${req.get("host")}`;
+  }
+
+  const resetUrl = `${BASE_URL}/password/reset/${resetToken}`;
 
   const message = `Dear ${user.name} \n\n 
      We received a request to reset the password for your account. To reset your password, please click on the following link:  
@@ -184,8 +197,15 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
   };
 
   let avatar;
+
+  let BASE_URL = process.env.BACKEND_URL;
+
+  if (process.env.NODE_ENV === "production") {
+    BASE_URL = `${req.protocol}://${req.get("host")}`;
+  }
+
   if (req.file) {
-    avatar = `${process.env.BACKEND_URL}/uploads/user/${req.file.originalname}`;
+    avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`;
     newUserData = { ...newUserData, avatar };
   }
 

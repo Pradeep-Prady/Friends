@@ -5,8 +5,14 @@ const ErrorHandler = require("../utils/errorHandler");
 exports.UserGangImagesUpload = catchAsyncError(async (req, res, next) => {
   let image;
 
+  let BASE_URL = process.env.BACKEND_URL;
+
+  if (process.env.NODE_ENV === "production") {
+    BASE_URL = `${req.protocol}://${req.get("host")}`;
+  }
+
   if (req.file) {
-    image = `${process.env.BACKEND_URL}/uploads/gang/${req.file.originalname}`;
+    image = `${BASE_URL}/uploads/gang/${req.file.originalname}`;
   }
 
   const user = req.user._id;
