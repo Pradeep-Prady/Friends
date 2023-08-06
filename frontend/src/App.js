@@ -113,9 +113,9 @@ function App() {
             <Route
               path="/admin/register"
               element={
-                <ProtectedRoute isAdmin={true}>
+                // <ProtectedRoute isAdmin={true}>
                   <Register />
-                </ProtectedRoute>
+                // </ProtectedRoute>
               }
             />
 
