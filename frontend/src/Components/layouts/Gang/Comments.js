@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import img1 from "../../../assets/images/bg2.jpg";
 
 import {
   createGangImageComment,

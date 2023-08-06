@@ -107,17 +107,19 @@ export default function UpdatePassword() {
             </div>
           </form>
         </div>
-        <div className=" bg-black w-full bottom-0 right-0 fixed flex items-start justify-evenly p-3 ">
+        <div className=" glass w-full bottom-0 right-0 fixed flex items-start justify-evenly p-3  md:p-5">
+
           <Link
             to="/profile/update"
-            className="text-white flex items-start justify-center"
+            className="text-black py-1.5 px-2 rounded-lg flex items-start justify-center"
+
           >
             <i className="fa-solid fa-pen-to-square"></i>
           </Link>
 
           <Link
             to="/profile/update"
-            className="text-black bg-white py-1.5 px-2 rounded-lg flex items-start justify-center"
+            className="text-white bg-black py-1.5 px-2 rounded-lg flex items-start justify-center"
           >
             {/* <i className="fa-solid fa-plus"></i> */}
             <i className="fa-solid fa-angle-down"></i>
@@ -125,7 +127,8 @@ export default function UpdatePassword() {
 
           <button
             //   onClick={logoutHandler}
-            className="text-white flex items-start justify-center"
+            className="text-black flex items-start justify-center"
+
           >
             <i className="fa-solid fa-arrow-right-from-bracket "></i>
           </button>

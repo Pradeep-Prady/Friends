@@ -20,7 +20,7 @@ export default function Reviews() {
       ) : (
         <>
           {" "}
-          <div className="w-full h-auto bg-stone-800">
+          <div className="w-full h-auto bg-stone-900">
             <h2 className="text-center text-4xl font-light text-white pt-5">
               Reviews
             </h2>

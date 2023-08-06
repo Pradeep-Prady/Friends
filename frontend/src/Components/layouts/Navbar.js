@@ -6,7 +6,7 @@ export default function Navbar() {
   const { isAuthenticated, user } = useSelector((state) => state.authState);
 
   return (
-    <div className="nav w-full flex justify-between p-3  z-50">
+    <div className="nav w-full flex justify-between p-3 md:p-7  z-50">
       <div>
         <a href="/" className="text-xl head-fon">
           Narikootam

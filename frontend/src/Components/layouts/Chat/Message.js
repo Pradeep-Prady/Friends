@@ -26,7 +26,7 @@ export default function Message({ chat }) {
 
   return (
     <div
-      className={`w-full my-2 text-white ${
+      className={`w-full my-2 text-white overflow-hidden ${
         chat.user._id !== user._id ? "flex justify-start" : "flex justify-end"
       }`}
     >
@@ -64,7 +64,7 @@ export default function Message({ chat }) {
                   {chat.user.name}{" "}
                 </span>
               </div>
-              <div className="w-full text-end">
+              <div className="w-9/12 md:10/12l text-start">
                 <p className="text-sm">{chat.text}</p>
               </div>
 

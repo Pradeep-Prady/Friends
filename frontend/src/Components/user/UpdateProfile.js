@@ -86,7 +86,7 @@ export default function UpdateProfile() {
         className="relative z-10 w-full h-screen flex items-center justify-center text-black login"
         id="login"
       >
-        <div className="w-11/12 sm:w-2/5 md:w-1/5 rounded-md  form-glass py-7 px-5">
+        <div className="w-11/12 sm:w-2/5 md:w-1/5 rounded-md  form-glass py-5 px-5">
           <form className="text-center" onSubmit={submitHandler}>
             <h2 className="text-3xl ">Update Profile</h2>
 
@@ -136,7 +136,7 @@ export default function UpdateProfile() {
               </div>
               <div className="flex ">
                 <input
-                  className="w-full outline-0  rounded-sm bg-transparent border-b-2 border-black"
+                  className="w-full glass outline-0  rounded-sm bg-transparent border-b-2 border-black"
                   type="file"
                   name="avatar"
                   onChange={onChangeAvatar}
@@ -162,25 +162,27 @@ export default function UpdateProfile() {
           </form>
         </div>
 
-        <div className=" bg-black w-full bottom-0 right-0 fixed flex items-start justify-evenly p-3 ">
+        <div className=" glass w-full bottom-0 right-0 fixed flex items-start justify-evenly p-3 ">
           <Link
             to="/profile/update"
-            className="text-white flex items-start justify-center"
+            className="text-black flex items-start justify-center"
+
           >
             <i className="fa-solid fa-pen-to-square"></i>
           </Link>
 
           <Link
             to="/profile"
-            className="text-black bg-white py-1.5 px-2 rounded-lg flex items-start justify-center"
-          >
+            className="text-white bg-black py-1.5 px-2 rounded-lg flex items-start justify-center"
+>
             {/* <i className="fa-solid fa-plus"></i> */}
             <i className="fa-solid fa-angle-down"></i>
           </Link>
 
           <button
             //   onClick={logoutHandler}
-            className="text-white flex items-start justify-center"
+            className="text-black flex items-start justify-center"
+
           >
             <i className="fa-solid fa-arrow-right-from-bracket "></i>
           </button>

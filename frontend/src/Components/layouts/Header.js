@@ -1,6 +1,5 @@
 import React from "react";
 
-import img from "../../assets/images/bg2.jpg";
 
 import img1 from "../../assets/images/1.png";
 import img2 from "../../assets/images/2.png";

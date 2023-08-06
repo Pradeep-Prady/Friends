@@ -109,7 +109,19 @@
 
 .login {
   position: relative;
-  background-image: url("./assets/images/c1.png");
+  background-image: url("./assets/images/st-bg-sm.png");
+  /* background-image: url("./assets/images/bg.png"); */
+
+  /* background-image: url("./assets/colors/blue.png"); */
+
+  background-attachment: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.bg {
+  background-image: url("./assets/images/bg.png");
+
   /* background-image: url("./assets/colors/blue.png"); */
 
   background-attachment: center;
@@ -118,7 +130,7 @@
   background-size: cover;
 }
 
-.login::before {
+/* .login::before {
   content: "";
   position: absolute;
   top: 0;
@@ -127,7 +139,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   pointer-events: none;
-}
+} */
 .review {
   background-image: url("./assets/images/review-bg-sm.png");
   background-position: center;
@@ -135,23 +147,31 @@
   background-size: cover;
 }
 .chatbg {
-  background-image: url("./assets/images/chatbg-sm.png");
+  background-image: url("./assets/images/chat-sm.png");
+  /* background-image: url("./assets/images/chat-sm.png"); */
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.review-card{
+.reviews-bg {
+  /* background-image: url("./assets/images/reviews-bg.png"); */
+  background-color: #48454e;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.review-card {
   background-image: url("./assets/images/review.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 12px;
 }
- 
+
 @media (min-width: 992px) {
   .login {
-    background-image: url("./assets/images/c1-lg.png");
-   
+    background-image: url("./assets/images/st-bg-lg.png");
   }
   .review {
     background-image: url("./assets/images/review-bg-md.png");
@@ -160,12 +180,11 @@
     background-size: cover;
   }
   .chatbg {
-    background-image: url("./assets/images/chatbg-sm.png");
+    background-image: url("./assets/images/chatbg-lg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-
 }
 
 @keyframes rotate360 {
@@ -255,4 +274,3 @@
 .card-23 {
   background-image: url("./assets/images/gang/pradeep.jpg");
 }
-
