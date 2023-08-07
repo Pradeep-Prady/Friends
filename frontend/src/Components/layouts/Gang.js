@@ -42,7 +42,7 @@ export default function Gang() {
           <div>Gang Images</div>
         </Link>
       </motion.div>
-{/* 
+  
       <motion.div
         className=" absolute  flex items-center justify-center  cursor-pointer"
         drag
@@ -342,7 +342,7 @@ export default function Gang() {
         }}
       >
         <div className="card card-2 w-[100px] h-[120px] md:w-[150px] md:h-[180px] bg-black "></div>
-      </motion.div> */}
+      </motion.div> 
     </div>
   );
 }
