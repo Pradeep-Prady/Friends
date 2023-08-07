@@ -121,25 +121,12 @@
 }
 .bg {
   background-image: url("./assets/images/bg.png");
-
-  /* background-image: url("./assets/colors/blue.png"); */
-
   background-attachment: center;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-/* .login::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  pointer-events: none;
-} */
 .review {
   background-image: url("./assets/images/review-bg-sm.png");
   background-position: center;
@@ -168,6 +155,18 @@
   background-size: cover;
   border-radius: 12px;
 }
+.x {
+  background-image: url("./assets/images/x.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.o {
+  background-image: url("./assets/images/o.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 @media (min-width: 992px) {
   .login {
@@ -175,15 +174,9 @@
   }
   .review {
     background-image: url("./assets/images/review-bg-md.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
   .chatbg {
     background-image: url("./assets/images/chatbg-lg.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }
 

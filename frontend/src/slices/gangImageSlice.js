@@ -26,7 +26,7 @@ const gangImageSlice = createSlice({
       return {
         ...state,
         loading: false,
-        gangImage: action.payload.gangImage,
+        gangImage: action.payload.image,
       };
     },
     gangImageFail(state, action) {

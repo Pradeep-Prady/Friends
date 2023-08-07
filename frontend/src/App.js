@@ -4,7 +4,7 @@ import store from "./store";
 import { useEffect } from "react";
 import { loadUser } from "./actions/userActions";
 import { HelmetProvider } from "react-helmet-async";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 import Navbar from "./Components/layouts/Navbar";
 import Login from "./Components/user/Login";
@@ -113,9 +113,9 @@ function App() {
             <Route
               path="/admin/register"
               element={
-                // <ProtectedRoute isAdmin={true}>
+                <ProtectedRoute isAdmin={true}>
                   <Register />
-                // </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
 
@@ -153,7 +153,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-               <Route
+            <Route
               path="/admin/gang/:id"
               element={
                 <ProtectedRoute isAdmin={true}>

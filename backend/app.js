@@ -36,8 +36,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// DB_LOCAL_URlI=mongodb+srv://pradeepm:7pCddsXbkO4emMJG@foodstallcluster.oqyvzfb.mongodb.net/?retryWrites=true&w=majority
-
+//  DB_LOCAL_URI=mongodb+srv://pradeep:qJzT-aKB649Pn_.@narikootam.j9cqh4k.mongodb.net/Narikootam?retryWrites=true&w=majority
+ 
 
 app.use(errorMidleware);
 

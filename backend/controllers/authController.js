@@ -49,11 +49,11 @@ exports.loginUser = catchAsyncError(async (req, res, next) => {
   const user = await User.findOne({ email }).select("+password");
 
   if (!user) {
-    return next(new ErrorHandler("Invalid email or password", 401));
+    return next(new ErrorHandler("Test Case Failed", 401));
   }
 
   if (!(await user.isValidPassword(password))) {
-    return next(new ErrorHandler("Invalid email or password", 401));
+    return next(new ErrorHandler("Test Case Failed", 401));
   }
 
   sendToken(user, 201, res);
@@ -255,9 +255,7 @@ exports.updateUser = catchAsyncError(async (req, res, next) => {
     email: req.body.email,
     role: req.body.role,
   };
-
-  // console.log(req.user.id);
-  // console.log(newUserData);
+ 
   const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
     new: true,
     runValidators: true,

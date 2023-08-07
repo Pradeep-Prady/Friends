@@ -14,8 +14,9 @@ exports.GangImagesUpload = catchAsyncError(async (req, res, next) => {
   if (req.file) {
     image = `${BASE_URL}/uploads/gang/${req.file.originalname}`;
   }
+  const { index } = req.body;
 
-  const gang_image = await GangImage.create({ image });
+  const gang_image = await GangImage.create({ image, index });
 
   res.status(200).json({
     success: true,
@@ -38,17 +39,17 @@ exports.getAllGangImages = catchAsyncError(async (req, res, next) => {
 // Get Single Image - /api/v1/
 
 exports.getGangImage = async (req, res, next) => {
-  const gangImage = await GangImage.findById(req.params.id).populate(
+  const image = await GangImage.findById(req.params.id).populate(
     "comments.user",
     "name email"
   );
 
-  if (!gangImage) {
+  if (!image) {
     return next(new ErrorHandler(400, "Gang Image not found"));
   }
   res.status(201).json({
     success: true,
-    gangImage,
+    image,
   });
 };
 

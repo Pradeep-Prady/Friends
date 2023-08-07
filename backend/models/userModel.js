@@ -36,6 +36,13 @@ const userSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  this.password = await bcrypt.hash(this.password, 10);
+});
+
 
 userSchema.methods.getJwtToken = function () {
   return jwt.sign({ id: this.id }, process.env.JWT_SECRET, {
@@ -45,9 +52,9 @@ userSchema.methods.getJwtToken = function () {
 
 userSchema.methods.isValidPassword = async function (enteredPassword) {
    
-  //return bcrypt.compare(enteredPassword, this.password);
+  return bcrypt.compare(enteredPassword, this.password);
 
-  return enteredPassword === this.password;
+  // return enteredPassword === this.password;
 };
 
 userSchema.methods.getResetToken = function () {

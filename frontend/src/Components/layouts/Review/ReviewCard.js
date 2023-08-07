@@ -1,4 +1,5 @@
 import React from "react";
+import img from '../../../assets/images/default_avatar.png'
 
 export default function ReviewCard({ review }) {
   var createdAt = String(review.createdAt);
@@ -17,7 +18,7 @@ export default function ReviewCard({ review }) {
         <div className="flex justify-between my-2">
           <div>
             <img
-              src={review.user.avatar}
+              src={review.user?.avatar ? review.user.avatar : img}
               alt="useravatar"
               className="w-[50px] h-[50px] rounded-md"
             />

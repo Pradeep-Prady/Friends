@@ -40,12 +40,7 @@ export default function Chat() {
       chatContainerRef.current.scrollTop =
         chatContainerRef.current.scrollHeight;
     }
-    console.log("top", chatContainerRef.current.scrollTop);
-    console.log(chatContainerRef.current.scrollHeight);
   }
-
-
-  
 
   return (
     <>

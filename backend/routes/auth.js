@@ -2,7 +2,10 @@ const express = require("express");
 const multer = require("multer");
 const path = require("path");
 
-const { isAuthenticatedUser, authorizeRoles } = require("../middlewares/authenticate");
+const {
+  isAuthenticatedUser,
+  authorizeRoles,
+} = require("../middlewares/authenticate");
 
 const {
   registerUser,
@@ -46,7 +49,14 @@ router
 
 // Admin Routes
 
-router.route("/admin/register").post(upload.single("avatar"), registerUser);
+router
+  .route("/admin/register")
+  .post(
+    isAuthenticatedUser,
+    authorizeRoles("admin"),
+    upload.single("avatar"),
+    registerUser
+  );
 router
   .route("/admin/users")
   .get(isAuthenticatedUser, authorizeRoles("admin"), getAllUsers);

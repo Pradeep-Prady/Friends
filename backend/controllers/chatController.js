@@ -7,25 +7,25 @@ const ErrorHandler = require("../utils/errorHandler");
 exports.getChats = catchAsyncError(async (req, res, next) => {
   const gang_chats = await Chat.find().populate("user", "name avatar");
 
-  try {
-    for (const chat of gang_chats) {
-      if (!chat) {
-        return next(new ErrorHandler("User not found", 404));
-      }
+  // try {
+  //   for (const chat of gang_chats) {
+  //     if (!chat) {
+  //       return next(new ErrorHandler("User not found", 404));
+  //     }
 
-      // let id = chat.user;
-      // const user = await User.findById(id);
-      // chat.name = user.name;
-      // chat.avatar = user.avatar;
-      // console.log(chat)
+  //     // let id = chat.user;
+  //     // const user = await User.findById(id);
+  //     // chat.name = user.name;
+  //     // chat.avatar = user.avatar;
+  //     // console.log(chat)
       
-    }
+  //   }
 
-    // Rest of your code here
-  } catch (error) {
-    // Handle the error
-    next(error);
-  }
+  //   // Rest of your code here
+  // } catch (error) {
+  //   // Handle the error
+  //   next(error);
+  // }
 
   res.status(200).json({
     success: true,

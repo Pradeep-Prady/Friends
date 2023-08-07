@@ -10,7 +10,7 @@ import {
   clearError,
 } from "../../../slices/gangImageSlice";
 
-function Comments({ id }) {
+function Comments({ id, commentsData}) {
   const [content, setContent] = useState("");
 
   const { isCommentSubmitted, error, comments } = useSelector(
@@ -32,7 +32,7 @@ function Comments({ id }) {
   useEffect(() => {
     if (isCommentSubmitted) {
       dispatch(clearCommentSubmitted());
-      //   dispatch(getComments(id));
+        dispatch(getComments(id));
     }
     if (error) {
       dispatch(clearError());
@@ -47,9 +47,9 @@ function Comments({ id }) {
 
   return (
     <>
-      <div className="w-full h-screen ">
+      <div className="w-full h- flex-row items-center justify-center">
         <div className="w-full h-1/5 flex items-center justify-center">
-          <form onSubmit={commentHandler} className="w-full flex  glass mx-2 ">
+          <form onSubmit={commentHandler} className="w-full sm:w-4/6 md:w-3/6 flex  glass mx-2 ">
             <input
               type="text "
               name="content"
@@ -64,6 +64,7 @@ function Comments({ id }) {
             </div>
           </form>
         </div>
+    
         <div className="w-full flex h-4/5 items-center justify-center">
           <div className="w-full h-full sm:w-8/12 md:w-6/12 ">
             <div className="overflow-y-scroll w-full h-4/5  p-3 scroll  z-10 rounded-lg">

@@ -27,25 +27,25 @@ export default function Message({ chat }) {
   return (
     <div
       className={`w-full my-2 text-white overflow-hidden ${
-        chat.user._id !== user._id ? "flex justify-start" : "flex justify-end"
+        chat?.user?._id !== user?._id ? "flex justify-start" : "flex justify-end"
       }`}
     >
-      {chat.user._id !== user._id ? (
+      {chat?.user?._id !== user._id ? (
         <>
-          <div className="flex w-8/12 p-2 bg-stone-950 rounded-md">
+          <div className="flex w-10/12 p-2 bg-stone-950 rounded-md">
             <div className="w-2/12">
               <img
-                src={chat.user.avatar ?? img}
+                src={chat?.user?.avatar ?? img}
                 alt="Message-User"
                 className="rounded-3xl w-[40px] h-[40px]"
               />
             </div>
             <div className="w-10/12 ml-1">
               <div>
-                <span className="text-xs text-stone-500">{chat.user.name}</span>
+                <span className="text-xs text-stone-500">{chat?.user?.name}</span>
               </div>
               <div className="">
-                <p className="text-sm">{chat.text}</p>
+                <p className="text-sm">{chat?.text}</p>
               </div>
 
               <div className="text-stone-700">
@@ -56,16 +56,17 @@ export default function Message({ chat }) {
         </>
       ) : (
         <>
-          <div className="flex w-8/12 p-2 glass rounded-md">
+          <div className="flex w-10/12 p-2 glass rounded-md">
             <div className="w-9/12 md:10/12  mr-2">
+
               <div className="w-full text-end">
                 <span className="text-xs text-stone-900 ">
-                  {" "}
-                  {chat.user.name}{" "}
+        
+                  {chat?.user?.name}{" "}
                 </span>
               </div>
-              <div className="w-9/12 md:10/12l text-start">
-                <p className="text-sm">{chat.text}</p>
+              <div className="w-full md:10/12 text-end">
+                <p className="text-sm">{chat?.text}</p>
               </div>
 
               <div className="text-stone-900 w-full text-end">
@@ -74,7 +75,7 @@ export default function Message({ chat }) {
             </div>
             <div className="w-3/12 md:w-2/12 flex items-start justify-center">
               <img
-                src={chat.user.avatar ?? img}
+                src={chat?.user?.avatar ?? img}
                 alt="Message-User"
                 className="rounded-3xl w-[40px] h-[40px]"
               />

@@ -5,6 +5,10 @@ const gangImageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  index: {
+    type: Number,
+    
+  },
   comments: [
     {
       user: {
