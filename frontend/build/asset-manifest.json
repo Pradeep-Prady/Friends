@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.0affeef9.css",
-    "main.js": "/static/js/main.82aefe94.js",
+    "main.css": "/static/css/main.3375dc49.css",
+    "main.js": "/static/js/main.ca8d67f6.js",
     "static/media/review-bg-sm.png": "/static/media/review-bg-sm.6c875a3e4582116ac627.png",
-    "static/media/st-bg-sm.png": "/static/media/st-bg-sm.61b8aa89cecf6ef61b3a.png",
     "static/media/review-bg-md.png": "/static/media/review-bg-md.ed2079cdfa948a200d76.png",
-    "static/media/bg.png": "/static/media/bg.851639189ba9258094d7.png",
     "static/media/vignesh.png": "/static/media/vignesh.89271948f2a4ce2c08e4.png",
     "static/media/sivaprakash.png": "/static/media/sivaprakash.0519bd0b70e6527e9fc4.png",
     "static/media/review.png": "/static/media/review.9c904baac720be370780.png",
     "static/media/hari.png": "/static/media/hari.4cd6c0d87d45ac611b64.png",
-    "static/media/st-bg-lg.png": "/static/media/st-bg-lg.7d6ff990bc32f48f0a9a.png",
-    "static/media/p-1.png": "/static/media/p-1.9a8c3d9e63fb5fe033a1.png",
+    "static/media/logo.png": "/static/media/logo.e52abeaf9c0ab510db00.png",
+    "static/media/chat-sm.png": "/static/media/chat-sm.459a7174174a81fd1a80.png",
     "static/media/sanjaykumar.jpg": "/static/media/sanjaykumar.202e3d1e58576c7709fa.jpg",
+    "static/media/profile.png": "/static/media/profile.2df78f8996b48ba320c5.png",
     "static/media/satya.jpg": "/static/media/satya.2a957d539ecb49881132.jpg",
     "static/media/pradeep.jpg": "/static/media/pradeep.15d885be9c439746e98c.jpg",
     "static/media/sathishkumar.jpg": "/static/media/sathishkumar.bda3f3fe20fe9a2aac86.jpg",
@@ -30,13 +29,14 @@
     "static/media/vijayaraja.jpg": "/static/media/vijayaraja.c4d65f03db58a5a31bca.jpg",
     "static/media/heymanth.jpg": "/static/media/heymanth.9d4574048baf9775a93f.jpg",
     "static/media/nithin.jpg": "/static/media/nithin.cdebc216a8e0b578f725.jpg",
-    "static/media/chat-sm.png": "/static/media/chat-sm.2d30e7277ea299edcc44.png",
     "static/media/pavithran.jpg": "/static/media/pavithran.91f60a7b842fbb79ad3a.jpg",
     "static/media/headerlg (3).png": "/static/media/headerlg (3).faa340db7399e55fa229.png",
     "static/media/headerlg (2).png": "/static/media/headerlg (2).6ff5badc6c680b838c23.png",
     "static/media/headerlg (1).png": "/static/media/headerlg (1).6977131e998543604177.png",
+    "static/media/profilelg.png": "/static/media/profilelg.1bf965ccf1254488b76c.png",
     "static/media/headerlg (4).png": "/static/media/headerlg (4).0db80ab9ad822e4c18e5.png",
     "static/media/x.png": "/static/media/x.c923f0804713c5aee2ab.png",
+    "static/media/chat-lg.png": "/static/media/chat-lg.dfc31b7e9e96c9fcab1c.png",
     "static/media/o.png": "/static/media/o.ce64d07b6a9c54b209b9.png",
     "static/media/chatbg-lg.png": "/static/media/chatbg-lg.c23d0de0fe8156ce9a09.png",
     "static/media/8.png": "/static/media/8.c784f1b77b0777d59100.png",
@@ -47,13 +47,19 @@
     "static/media/6.png": "/static/media/6.d6a967d2722aff6d3e0e.png",
     "static/media/2.png": "/static/media/2.2aea2a056ec95aca9daf.png",
     "static/media/1.png": "/static/media/1.471b7f3cc9ce87c3c2ba.png",
+    "static/media/leaf4.png": "/static/media/leaf4.f6ef6bbf759b39d777f4.png",
     "static/media/Gumela Regular.otf": "/static/media/Gumela Regular.0ae83c6988a536716eb4.otf",
+    "static/media/leaf2.png": "/static/media/leaf2.554a6cc2e3cda2ecb382.png",
+    "static/media/leaf1.png": "/static/media/leaf1.bf0df2a18b29a7d5130d.png",
+    "static/media/leaf5.png": "/static/media/leaf5.6b255d22e6701979341f.png",
+    "static/media/leaf.png": "/static/media/leaf.25d1c0e62230928c9dd9.png",
+    "static/media/leaf3.png": "/static/media/leaf3.afef9c12351c909dcd15.png",
     "index.html": "/index.html",
-    "main.0affeef9.css.map": "/static/css/main.0affeef9.css.map",
-    "main.82aefe94.js.map": "/static/js/main.82aefe94.js.map"
+    "main.3375dc49.css.map": "/static/css/main.3375dc49.css.map",
+    "main.ca8d67f6.js.map": "/static/js/main.ca8d67f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.0affeef9.css",
-    "static/js/main.82aefe94.js"
+    "static/css/main.3375dc49.css",
+    "static/js/main.ca8d67f6.js"
   ]
 }

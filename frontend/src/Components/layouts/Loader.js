@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../assets/images/p-1.png";
+import img from "../../assets/images/logo.png";
 
 export default function Loader() {
   return (

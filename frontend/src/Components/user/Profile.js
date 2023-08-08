@@ -56,7 +56,12 @@ export default function Profile() {
                       Upload Images
                     </button>
                   </Link> */}
-                  <a href="https://forms.gle/NkaNNpYV1cc6cpBU8" className="bg-stone-950 py-1 px-3 text-white text-sm rounded-md ">Upload Images</a>
+                  <a
+                    href="https://forms.gle/NkaNNpYV1cc6cpBU8"
+                    className="bg-stone-950 py-1 px-3 text-white text-sm rounded-md "
+                  >
+                    Upload Images
+                  </a>
                 </div>
               </h2>
             </div>
@@ -64,7 +69,7 @@ export default function Profile() {
             <div className=" glass w-full bottom-0 right-0 fixed flex items-start justify-evenly p-3  md:p-5">
               <Link
                 to="/profile/update"
-                className="text-black flex items-start justify-center"
+                className="text-black  bg-white py-1.5 px-2 rounded-lg  flex items-start justify-center"
               >
                 <i className="fa-solid fa-pen-to-square"></i>
               </Link>
@@ -73,13 +78,12 @@ export default function Profile() {
                 to="/"
                 className="text-white bg-black py-1.5 px-2 rounded-lg flex items-start justify-center"
               >
-                {/* <i className="fa-solid fa-plus"></i> */}
                 <i className="fa-solid fa-angle-down"></i>
               </Link>
 
               <button
                 onClick={logoutHandler}
-                className="text-black flex items-start justify-center"
+                className="text-black   bg-white py-1.5 px-2 rounded-lg flex items-start justify-center"
               >
                 <i className="fa-solid fa-arrow-right-from-bracket "></i>
               </button>

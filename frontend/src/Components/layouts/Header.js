@@ -25,7 +25,7 @@ import HeaderCard from "./HeaderCard";
 export default function Header() {
   return (
     <>
-      <div className="bg-stone-700 w-full h-screen relative overflow-hidden">
+      <div className="bg-black w-full h-screen relative overflow-hidden">
         <HeaderCard
           ini={"100%"}
           ani={"-100%"}

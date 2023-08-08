@@ -12,8 +12,7 @@ const gangImageSlice = createSlice({
     isGangImageCreated: false,
     isUserGangImageCreated: false,
     isGangImageDeleted: false,
-
-    isProductUpdated: false,
+ 
   },
   reducers: {
     gangImageRequest(state, action) {

@@ -5,14 +5,13 @@ import { clearError, clearReviewSubmitted } from "../../../slices/reviewSlice";
 import { toast } from "react-hot-toast";
 
 export default function CreateReview() {
-  const [message, setMessage] = useState("");
 
+  const [message, setMessage] = useState("");
   const { isReviewSubmitted, error } = useSelector(
     (state) => state.reviewsState
   );
 
   const dispatch = useDispatch();
-
   const submitHandler = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -57,7 +56,7 @@ export default function CreateReview() {
   }, [dispatch, error, isReviewSubmitted]);
 
   return (
-    <div className="w-full h-screen bg-stone-900 review ">
+    <div className="w-full h-screen bg-stone-900 review relative z-10">
       <h2 className="text-center text-4xl font-light text-white pt-5">
         Write Review
       </h2>

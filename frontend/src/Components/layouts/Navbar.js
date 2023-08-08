@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <div className="nav w-full flex justify-between p-3 md:p-7  z-50">
       <div>
-        <a href="/" className="text-xl head-fon">
+        <a href="/" className="text-xl head-font ">
           Narikootam
         </a>
       </div>
@@ -16,7 +16,7 @@ export default function Navbar() {
         {isAuthenticated ? (
           <>
             <Link to="/profile">
-              <button className="scale-75 button-54">Account</button>
+              <button className="scale-75 button-54">Profile</button>
             </Link>
           </>
         ) : (

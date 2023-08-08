@@ -41,7 +41,7 @@ exports.getAllGangImages = catchAsyncError(async (req, res, next) => {
 exports.getGangImage = async (req, res, next) => {
   const image = await GangImage.findById(req.params.id).populate(
     "comments.user",
-    "name email"
+    "name email avatar"
   );
 
   if (!image) {

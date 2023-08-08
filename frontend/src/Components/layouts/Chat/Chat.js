@@ -50,7 +50,7 @@ export default function Chat() {
         <> */}{" "}
       <MetaData title={"Chat"} />{" "}
       <div className="w-full h-screen bg-stone-800 py-5 px-2 flex justify-center items-center">
-        <div className="w-full h-full review rounded-md sm:w-3/5 md:w-2/5">
+        <div className="w-full h-full  bg rounded-md sm:w-3/5 md:w-2/5">
           <div
             ref={chatContainerRef}
             style={{ height: "90%" }}
@@ -63,16 +63,16 @@ export default function Chat() {
           <form
             onSubmit={submitHandler}
             style={{ height: "10%" }}
-            className="  glass w-full flex justify-center items-center px-2"
+            className="glass w-full flex justify-center items-center px-2"
           >
             <input
               value={text}
               onChange={(e) => setText(e.target.value)}
               type="text "
-              className="w-10/12  py-1 px-2 rounded-sm outline-0 glass text-white"
+              className="w-10/12  py-1 px-2 rounded-sm outline-0 glass text-black"
             />
-            <button type="submit" className="w-2/12 text-white ">
-              <i className="fa-solid fa-paper-plane text-xl text-white"></i>
+            <button type="submit" className="w-2/12 glass ">
+              <i className="fa-solid fa-paper-plane text-xl text-black"></i>
             </button>
           </form>
         </div>

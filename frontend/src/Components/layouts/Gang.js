@@ -24,7 +24,7 @@ export default function Gang() {
   }, []);
 
   return (
-    <div className="w-full h-screen overflow-hidden flex items-center justify-center bg">
+    <div className="w-full h-screen  overflow-hidden flex items-center justify-center ">
       <motion.div
       
         className=" absolute flex items-center justify-center z-3"

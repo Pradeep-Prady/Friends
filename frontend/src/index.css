@@ -109,18 +109,14 @@
 
 .login {
   position: relative;
-  background-image: url("./assets/images/st-bg-sm.png");
-  /* background-image: url("./assets/images/bg.png"); */
-
-  /* background-image: url("./assets/colors/blue.png"); */
-
+  background-image: url("./assets/images/profile.png");
   background-attachment: center;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .bg {
-  background-image: url("./assets/images/bg.png");
+  background-image: url("./assets/images/profile.png");
   background-attachment: center;
   background-repeat: no-repeat;
   background-position: center;
@@ -133,10 +129,8 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.chatbg {
+.chat-bg {
   background-image: url("./assets/images/chat-sm.png");
-  /* background-image: url("./assets/images/chat-sm.png"); */
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -170,13 +164,19 @@
 
 @media (min-width: 992px) {
   .login {
-    background-image: url("./assets/images/st-bg-lg.png");
+    background-image: url("./assets/images/profilelg.png");
   }
   .review {
     background-image: url("./assets/images/review-bg-md.png");
   }
   .chatbg {
     background-image: url("./assets/images/chatbg-lg.png");
+  }
+  .bg {
+    background-image: url("./assets/images/profilelg.png");
+  }
+  .chat-bg {
+    background-image: url("./assets/images/chat-lg.png");
   }
 }
 
@@ -266,4 +266,59 @@
 }
 .card-23 {
   background-image: url("./assets/images/gang/pradeep.jpg");
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid rgb(0, 0, 0); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end) infinite,
+    blink-caret 0.5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(0, 0, 0);
+  }
+}
+
+ 
+:root {
+  --shadow-color: 0deg 0% 68%;
+  --shadow-elevation-low:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.36),
+    0px 0.4px 0.4px -1.6px hsl(var(--shadow-color) / 0.31),
+    0px 0.9px 0.9px -3.1px hsl(var(--shadow-color) / 0.26);
+  --shadow-elevation-medium:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.38),
+    0px 0.7px 0.7px -1px hsl(var(--shadow-color) / 0.34),
+    -0.1px 1.7px 1.7px -2.1px hsl(var(--shadow-color) / 0.3),
+    -0.2px 4.4px 4.5px -3.1px hsl(var(--shadow-color) / 0.26);
+  --shadow-elevation-high:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.31),
+    0px 0.9px 0.9px -0.4px hsl(var(--shadow-color) / 0.3),
+    -0.1px 1.6px 1.6px -0.8px hsl(var(--shadow-color) / 0.28),
+    -0.1px 2.6px 2.7px -1.2px hsl(var(--shadow-color) / 0.27),
+    -0.2px 4.1px 4.2px -1.6px hsl(var(--shadow-color) / 0.26),
+    -0.3px 6.4px 6.6px -2px hsl(var(--shadow-color) / 0.24),
+    -0.5px 9.7px 10px -2.4px hsl(var(--shadow-color) / 0.23),
+    -0.7px 14.2px 14.6px -2.8px hsl(var(--shadow-color) / 0.21),
+    -1px 20.2px 20.8px -3.1px hsl(var(--shadow-color) / 0.2);
 }

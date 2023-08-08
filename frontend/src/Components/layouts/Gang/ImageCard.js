@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ImageCard({ gangImage, index, setSelectedImageIndex }) {
   return (
     <div className="relative w-full h-screen flex items-center justify-center rounded-md z-10">
-      <div className="w-full h-4/5 overflow-hidden sm:w-10/12 md:w-8/12 flex items-center justify-center ">
+      <div className="w-full glass h-4/5 overflow-hidden sm:w-10/12 md:w-8/12 flex items-center justify-center ">
         <Link
           to={`/gang/image/${gangImage?._id}`}
           className="flex items-center justify-center"

@@ -58,7 +58,7 @@ export default function Login() {
     <>
       <MetaData title={"Login"} />
       <div
-        className="relative z-10 w-full h-screen flex items-center justify-center login"
+        className="relative z-10 w-full h-screen flex items-center  justify-center login"
         id="login"
       >
         <div className="w-11/12 sm:w-2/5 md:w-1/5 rounded-md  form-glass py-7 px-5">

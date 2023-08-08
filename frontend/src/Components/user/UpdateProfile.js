@@ -59,7 +59,6 @@ export default function UpdateProfile() {
           backdropFilter: "blur(10px)",
           color: "white",
         },
-        
       });
       dispatch(clearUpdateProfile());
 
@@ -77,7 +76,6 @@ export default function UpdateProfile() {
           backdropFilter: "blur(10px)",
           color: "white",
         },
-         
       });
       dispatch(clearAuthError);
 
@@ -89,7 +87,7 @@ export default function UpdateProfile() {
     <>
       <MetaData title={"Update Profile"} />{" "}
       <div
-        className="relative z-10 w-full h-screen flex items-center justify-center text-black login"
+        className="relative z-10 w-full h-screen flex items-center justify-center text-black bg"
         id="login"
       >
         <div className="w-11/12 sm:w-2/5 md:w-1/5 rounded-md  form-glass py-5 px-5">
@@ -171,7 +169,7 @@ export default function UpdateProfile() {
         <div className=" glass w-full bottom-0 right-0 fixed flex items-start justify-evenly p-3 ">
           <Link
             to="/profile/update"
-            className="text-black flex items-start justify-center"
+            className="text-black  bg-white py-1.5 px-2 rounded-lg  flex items-start justify-center"
 
           >
             <i className="fa-solid fa-pen-to-square"></i>
@@ -180,18 +178,17 @@ export default function UpdateProfile() {
           <Link
             to="/profile"
             className="text-white bg-black py-1.5 px-2 rounded-lg flex items-start justify-center"
->
-            {/* <i className="fa-solid fa-plus"></i> */}
+          >
             <i className="fa-solid fa-angle-down"></i>
           </Link>
 
-          <button
-            //   onClick={logoutHandler}
-            className="text-black flex items-start justify-center"
+          <Link
+            to="/profile"
+            className="text-black   bg-white py-1.5 px-2 rounded-lg flex items-start justify-center"
 
           >
             <i className="fa-solid fa-arrow-right-from-bracket "></i>
-          </button>
+          </Link>
         </div>
       </div>
     </>

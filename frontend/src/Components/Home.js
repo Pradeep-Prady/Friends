@@ -10,6 +10,7 @@ import MetaData from "./layouts/MetaData";
 import TicTacToe from "./layouts/Game/TicTacToe";
 import { getGangImages } from "../actions/gangImageActions";
 import { useDispatch } from "react-redux";
+import Loader from "./layouts/Loader";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -23,8 +24,10 @@ export default function Home() {
       <MetaData title={"Home"} />
 
       <Navbar />
-      <Header />
+      <Header />  
+
       <Gang />
+      
       <GroupChat />
       <CreateReview />
       <Reviews />

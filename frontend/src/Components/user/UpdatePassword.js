@@ -68,7 +68,7 @@ export default function UpdatePassword() {
       >
         <div className="w-11/12 sm:w-2/5 md:w-1/5 rounded-md  form-glass py-7 px-5">
           <form className="text-center" onSubmit={submitHandler}>
-            <h2 className="text-3xl">Login</h2>
+            <h2 className="text-3xl">Change Password</h2>
 
             <div className="my-5 flex-row">
               <div className="flex my-2">
@@ -115,27 +115,29 @@ export default function UpdatePassword() {
 
           <Link
             to="/profile/update"
-            className="text-black py-1.5 px-2 rounded-lg flex items-start justify-center"
+            className="text-black  bg-white py-1.5 px-2 rounded-lg  flex items-start justify-center"
+
 
           >
             <i className="fa-solid fa-pen-to-square"></i>
           </Link>
 
           <Link
-            to="/profile/update"
+            to="/profile"
             className="text-white bg-black py-1.5 px-2 rounded-lg flex items-start justify-center"
           >
             {/* <i className="fa-solid fa-plus"></i> */}
             <i className="fa-solid fa-angle-down"></i>
           </Link>
 
-          <button
-            //   onClick={logoutHandler}
-            className="text-black flex items-start justify-center"
+          <Link
+           to='/profile/update'
+           className="text-black   bg-white py-1.5 px-2 rounded-lg flex items-start justify-center"
+
 
           >
             <i className="fa-solid fa-arrow-right-from-bracket "></i>
-          </button>
+          </Link>
         </div>
       </div>
     </>

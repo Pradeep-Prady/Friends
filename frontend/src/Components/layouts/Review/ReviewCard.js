@@ -1,5 +1,6 @@
 import React from "react";
-import img from '../../../assets/images/default_avatar.png'
+import img from "../../../assets/images/default_avatar.png";
+import { motion } from "framer-motion";
 
 export default function ReviewCard({ review }) {
   var createdAt = String(review.createdAt);
@@ -13,7 +14,9 @@ export default function ReviewCard({ review }) {
   var formattedDate = date.toLocaleDateString("en-GB", optionsDate);
 
   return (
-    <div>
+    <motion.div
+  
+    >
       <div className=" flex-none carousel-item w-[250px] p-5 mx-3  review-card rounded-sm">
         <div className="flex justify-between my-2">
           <div>
@@ -33,6 +36,6 @@ export default function ReviewCard({ review }) {
           <p className="text-sm font-semibold">{formattedDate}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

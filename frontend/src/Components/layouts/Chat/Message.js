@@ -26,14 +26,14 @@ export default function Message({ chat }) {
 
   return (
     <div
-      className={`w-full my-2 text-white overflow-hidden ${
+      className={`w-full my-2 text-white glass overflow-hidden ${
         chat?.user?._id !== user?._id ? "flex justify-start" : "flex justify-end"
       }`}
     >
       {chat?.user?._id !== user._id ? (
         <>
-          <div className="flex w-10/12 p-2 bg-stone-950 rounded-md">
-            <div className="w-2/12">
+          <div className="flex w-10/12 p-2 glass rounded-md">
+            <div className="w-3/12 md:w-2/12 flex items-start justify-center">
               <img
                 src={chat?.user?.avatar ?? img}
                 alt="Message-User"
@@ -44,7 +44,7 @@ export default function Message({ chat }) {
               <div>
                 <span className="text-xs text-stone-500">{chat?.user?.name}</span>
               </div>
-              <div className="">
+              <div className="text-black">
                 <p className="text-sm">{chat?.text}</p>
               </div>
 
@@ -56,8 +56,8 @@ export default function Message({ chat }) {
         </>
       ) : (
         <>
-          <div className="flex w-10/12 p-2 glass rounded-md">
-            <div className="w-9/12 md:10/12  mr-2">
+          <div className="flex w-10/12 p-2 glass  rounded-md">
+            <div className="w-9/12 md:10/12  ">
 
               <div className="w-full text-end">
                 <span className="text-xs text-stone-900 ">
@@ -65,7 +65,7 @@ export default function Message({ chat }) {
                   {chat?.user?.name}{" "}
                 </span>
               </div>
-              <div className="w-full md:10/12 text-end">
+              <div className="w-full md:10/12 text-end text-black">
                 <p className="text-sm">{chat?.text}</p>
               </div>
 
@@ -73,6 +73,7 @@ export default function Message({ chat }) {
                 <span className="text-xs ">{formattedTime}</span>
               </div>
             </div>
+
             <div className="w-3/12 md:w-2/12 flex items-start justify-center">
               <img
                 src={chat?.user?.avatar ?? img}
