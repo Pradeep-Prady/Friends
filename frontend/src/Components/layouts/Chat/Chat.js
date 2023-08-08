@@ -25,7 +25,7 @@ export default function Chat() {
 
   useEffect(() => {
     if (isChatCreated) {
-      // dispatch(getChats());
+      dispatch(getChats());
       dispatch(clearChatCreated());
     }
     dispatch(getChats());

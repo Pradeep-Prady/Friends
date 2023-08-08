@@ -75,28 +75,28 @@ exports.createChat = catchAsyncError(async (req, res, next) => {
 
   const chat = await Chat.create(req.body);
 
-  const chats = await Chat.find();
+  // const chats = await Chat.find();
 
-  try {
-    for (const chat of chats) {
-      if (!chat) {
-        return next(new ErrorHandler("User not found", 404));
-      }
+  // try {
+  //   for (const chat of chats) {
+  //     if (!chat) {
+  //       return next(new ErrorHandler("User not found", 404));
+  //     }
 
-      let id = chat.user;
-      const user = await User.findById(id);
-      chat.name = user.name;
-      chat.avatar = user.avatar;
-    }
+  //     let id = chat.user;
+  //     const user = await User.findById(id);
+  //     chat.name = user.name;
+  //     chat.avatar = user.avatar;
+  //   }
 
-    // Rest of your code here
-  } catch (error) {
-    // Handle the error
-    next(error);
-  }
+  //   // Rest of your code here
+  // } catch (error) {
+  //   // Handle the error
+  //   next(error);
+  // }
 
   res.status(201).json({
     success: true,
-    chats,
+    chat,
   });
 });
