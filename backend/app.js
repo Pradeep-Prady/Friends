@@ -39,6 +39,9 @@ if (process.env.NODE_ENV === "production") {
 //  DB_LOCAL_URI=mongodb+srv://pradeep:qJzT-aKB649Pn_.@narikootam.j9cqh4k.mongodb.net/Narikootam?retryWrites=true&w=majority
  
 
+// DB_LOCAL_URI=mongodb://127.0.0.1:27017/Narikootam
+
+
 app.use(errorMidleware);
 
 module.exports = app;
