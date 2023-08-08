@@ -52,8 +52,8 @@ router
 router
   .route("/admin/register")
   .post(
-    isAuthenticatedUser,
-    authorizeRoles("admin"),
+    // isAuthenticatedUser,
+    // authorizeRoles("admin"),
     upload.single("avatar"),
     registerUser
   );
