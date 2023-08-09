@@ -48,7 +48,7 @@ export default function Message({ chat }) {
                 <p className="text-sm">{chat?.text}</p>
               </div>
 
-              <div className="text-stone-300 w-full flex justify-between">
+              <div className="text-stone-500 w-full flex justify-between">
                 <span className="text-xs ">{formattedTime}</span>
                 <span className="text-xs ">{formattedDate}</span>
 
@@ -71,7 +71,7 @@ export default function Message({ chat }) {
                 <p className="text-sm">{chat?.text}</p>
               </div>
 
-              <div className="text-stone-300 w-full flex justify-between">
+              <div className="text-stone-500 w-full flex justify-between">
                 <span className="text-xs ">{formattedTime}</span>
                 <span className="text-xs ">{formattedDate}</span>
 

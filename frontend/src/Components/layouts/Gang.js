@@ -35,24 +35,7 @@ export default function Gang() {
 
   return (
     <div className="w-full h-screen relative overflow-hidden flex items-center justify-center  ">
-      <motion.div
-        className="absolute right-0 bottom-0 z-3"
-        initial={{ x: "40vw", y: 0 }}
-        animate={{ x: "-100vw", y: 0 }}
-        transition={{
-          duration: `20`,
-
-          repeat: Infinity,
-          repeatType: "loop",
-          ease: "linear",
-        }}
-      >
-        <motion.img
-          src={bike}
-          alt="foxImage"
-          className="w-[150px] sm:w-[200px] md:w-[250px] h-auto"
-        />
-      </motion.div>
+     
       <motion.div
         className="absolute right-0 bottom-0  overflow-hidden"
         initial={{ x: "60vw", y: 0 }}
@@ -71,7 +54,7 @@ export default function Gang() {
           className="w-[150px] sm:w-[200px] md:w-[250px] h-auto"
         />
       </motion.div>
-      <motion.div
+      {/* <motion.div
         className="absolute right-0 top-10  "
         initial={{ x: "0vw", y: "0vh" }}
         animate={{ x: "0", y: "10vh" }}
@@ -88,7 +71,7 @@ export default function Gang() {
           alt="foxImage"
           className="w-[150px] sm:w-[200px] md:w-[250px] h-auto"
         />
-      </motion.div>
+      </motion.div> */}
 
       <motion.div
         className="absolute right-5   z-3"
@@ -133,6 +116,24 @@ export default function Gang() {
         className="absolute left-10 top-20  z-3 "
         initial={{ x: "90vw", y: 0 }}
         animate={{ x: "-100vw", y: 0 }}
+        transition={{
+          duration: `20`,
+
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "linear",
+        }}
+      >
+        <motion.img
+          src={bike}
+          alt="foxImage"
+          className="w-[150px] sm:w-[200px] md:w-[250px] h-auto"
+        />
+      </motion.div>
+      {/* <motion.div
+        className="absolute left-10 top-20  z-3 "
+        initial={{ x: "90vw", y: 0 }}
+        animate={{ x: "-100vw", y: 0 }}
         end={{ x: "0", y: 0 }}
         transition={{
           duration: `35`,
@@ -147,7 +148,7 @@ export default function Gang() {
           alt="foxImage"
           className="w-[70px] sm:w-[100px] md:w-[150px] h-auto"
         />
-      </motion.div>
+      </motion.div> */}
       <motion.div
         className="absolute left-0 top-10  z-3"
         initial={{ x: 30, y: 0 }}
@@ -186,8 +187,8 @@ export default function Gang() {
         />
       </motion.div>
       <motion.div
-        className="absolute  top-[30vh]  z-3"
-        initial={{ x: 40, y: 50 }}
+        className="absolute  top-[10vh] left-10  z-3"
+        initial={{ x: 40, y: 20 }}
         animate={{ x: 0, y: 0 }}
         end={{ x: "0", y: 0 }}
         transition={{
@@ -205,7 +206,7 @@ export default function Gang() {
       </motion.div>
 
       <motion.div
-        className="absolute  top-[20vh]   z-3"
+        className="absolute  top-[10vh]   z-3"
         initial={{ x: 40, y: 0 }}
         animate={{ x: 30, y: 20 }}
         end={{ x: "0", y: 0 }}
@@ -223,7 +224,7 @@ export default function Gang() {
         />
       </motion.div>
       <motion.div
-        className="absolute  left-[30vw] top-[35vh]   z-3"
+        className="absolute  left-10 bottom-[20vh]   z-3"
         initial={{ x: 0, y: 30 }}
         animate={{ x: 20, y: 0 }}
         end={{ x: "0", y: 0 }}
