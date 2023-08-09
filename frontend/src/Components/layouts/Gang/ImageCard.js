@@ -5,23 +5,26 @@ export default function ImageCard({ gangImage }) {
 
   const handleDownload = async () => {
     try {
-      const response = await fetch(gangImage?.image); // Fetch the image
+      // Ensure the image URL uses HTTPS
+      const secureImageUrl = gangImage?.image.replace('http://', 'https://');
+  
+      const response = await fetch(secureImageUrl); // Fetch the image
       const blob = await response.blob(); // Get the image data as a Blob
-
+  
       const url = URL.createObjectURL(blob); // Create a temporary URL for the Blob
-
+  
       const link = document.createElement("a");
       link.href = url;
       link.download = "narikootam-image.jpg"; // Set the default download filename
       link.click();
-
+  
       // Clean up the temporary URL
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error("Error downloading image:", error);
     }
   };
-
+  
   return (
     <div className="relative  w-full h-screen  flex items-center justify-center rounded-md z-10 ">
 

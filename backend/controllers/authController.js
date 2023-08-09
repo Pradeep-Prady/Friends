@@ -112,8 +112,7 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
     sendEmail({
       email: user.email,
       subject: "Reset Your Password - Narikootam",
-      // message: message,
-      utl: resetUrl,
+      url: resetUrl,
       name: user.name,
     });
 
