@@ -21,13 +21,13 @@ export default function ReviewCard({ review }) {
         <div className="flex justify-between my-2">
           <div>
             <img
-              src={review.user?.avatar ? review.user.avatar : img}
+              src={review.user?.avatar ? review?.user?.avatar : img}
               alt="useravatar"
               className="w-[50px] h-[50px] rounded-md"
             />
           </div>
           <div>
-            <h3 className="text-sm font-semibold ">{review.user.name}</h3>
+            <h3 className="text-sm font-semibold ">{review?.user?.name}</h3>
           </div>
         </div>
         <p className="text-black ">{review.message}</p>
