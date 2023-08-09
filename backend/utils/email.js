@@ -52,9 +52,7 @@ const sendEmail = async (options) => {
   await transporter.sendMail(message, (err, info) => {
     if (err) {
       console.log("error", err);
-    } else {
-      console.log("info", info);
-    }
+    }  
   });
 };
 
