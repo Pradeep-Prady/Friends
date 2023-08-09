@@ -10,7 +10,6 @@ import MetaData from "./layouts/MetaData";
 import TicTacToe from "./layouts/Game/TicTacToe";
 import { getGangImages } from "../actions/gangImageActions";
 import { useDispatch } from "react-redux";
-import Loader from "./layouts/Loader";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -21,18 +20,20 @@ export default function Home() {
 
   return (
     <>
-      <MetaData title={"Home"} />
+      <div className="overflow-hidden">
+        <MetaData title={"Home"} />
 
-      <Navbar />
-      <Header />  
+        <Navbar />
+        <GroupChat />
+        <Header />
 
-      <Gang />
-      
-      <GroupChat />
-      <CreateReview />
-      <Reviews />
-      <TicTacToe />
-      <Footer />
+        <Gang />
+
+        <CreateReview />
+        <Reviews />
+        {/* <TicTacToe /> */}
+        <Footer />
+      </div>
     </>
   );
 }

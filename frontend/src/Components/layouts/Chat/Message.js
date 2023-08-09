@@ -26,13 +26,13 @@ export default function Message({ chat }) {
 
   return (
     <div
-      className={`w-full my-2 text-white glass overflow-hidden ${
+      className={`w-full my-2 text-white   overflow-hidden ${
         chat?.user?._id !== user?._id ? "flex justify-start" : "flex justify-end"
       }`}
     >
       {chat?.user?._id !== user._id ? (
         <>
-          <div className="flex w-10/12 p-2 glass rounded-md">
+          <div className="flex w-10/12 p-2 mglass rounded-md">
             <div className="w-3/12 md:w-2/12 flex items-start justify-center">
               <img
                 src={chat?.user?.avatar ?? img}
@@ -48,19 +48,21 @@ export default function Message({ chat }) {
                 <p className="text-sm">{chat?.text}</p>
               </div>
 
-              <div className="text-stone-700">
+              <div className="text-stone-300 w-full flex justify-between">
                 <span className="text-xs ">{formattedTime}</span>
+                <span className="text-xs ">{formattedDate}</span>
+
               </div>
             </div>
           </div>
         </>
       ) : (
         <>
-          <div className="flex w-10/12 p-2 glass  rounded-md">
+          <div className="flex w-10/12 p-2 mglass  rounded-md">
             <div className="w-9/12 md:10/12  ">
 
               <div className="w-full text-end">
-                <span className="text-xs text-stone-900 ">
+                <span className="text-xs text-stone-500 ">
         
                   {chat?.user?.name}{" "}
                 </span>
@@ -69,8 +71,10 @@ export default function Message({ chat }) {
                 <p className="text-sm">{chat?.text}</p>
               </div>
 
-              <div className="text-stone-900 w-full text-end">
+              <div className="text-stone-300 w-full flex justify-between">
                 <span className="text-xs ">{formattedTime}</span>
+                <span className="text-xs ">{formattedDate}</span>
+
               </div>
             </div>
 

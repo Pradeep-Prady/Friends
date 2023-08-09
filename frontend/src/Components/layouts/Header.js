@@ -41,8 +41,8 @@ export default function Header() {
           ani={"100%"}
           img1={img3}
           img2={img4}
-          img_lg1={img3_lg}
-          img_lg2={img4_lg}
+          img_lg1={img4_lg}
+          img_lg2={img3_lg}
           className="header2"
 
         />
@@ -51,8 +51,8 @@ export default function Header() {
           ani={"-100%"}
           img1={img5}
           img2={img6}
-          img_lg1={img1_lg}
-          img_lg2={img2_lg}
+          img_lg1={img2_lg}
+          img_lg2={img1_lg}
           className="header3"
 
         />

@@ -56,9 +56,8 @@ export default function ImageCardDetails({ indexValue }) {
       <div className="w-auto h-2/5 flex items-center justify-center">
         <img src={gangImage?.image} alt="GangImage" className="h-full w-auto" />
       </div>
-      <p>{indexValue}</p>
-      {/* <p onClick={() => setCommentOpen(!commentOpen)}>Comments</p> */}
-      <div className={` ${commentOpen ? "visible" : "visible"}`}>
+      
+      <div className={`my-5`}>
         <Comments id={id} commentsData={comments} />
       </div>
     </div>

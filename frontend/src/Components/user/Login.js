@@ -46,7 +46,7 @@ export default function Login() {
           backdropFilter: "blur(10px)",
           color: "white",
         },
-        icon: "😥"
+        icon: "😥",
       });
       dispatch(clearAuthError);
 
@@ -58,7 +58,7 @@ export default function Login() {
     <>
       <MetaData title={"Login"} />
       <div
-        className="relative z-10 w-full h-screen flex items-center  justify-center login"
+        className="relative z-10 w-full h-screen flex items-center  justify-center bg"
         id="login"
       >
         <div className="w-11/12 sm:w-2/5 md:w-1/5 rounded-md  form-glass py-7 px-5">
@@ -67,12 +67,13 @@ export default function Login() {
 
             <div className="my-5 flex-row">
               <div className="flex my-2">
-                <label>Email Address *</label>
+                <label htmlFor="email">Email Address *</label>
               </div>
-              <div className="flex ">
+              <div className="flex">
                 <input
-                  className="w-full outline-0  rounded-sm bg-transparent border-black border-b-2"
+                  className="w-full outline-0 rounded-sm bg-transparent border-black border-b-2"
                   type="email"
+                  id="email"
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -82,12 +83,13 @@ export default function Login() {
 
             <div className="my-5 flex-row">
               <div className="flex my-2">
-                <label>Password *</label>
+                <label htmlFor="password">Password *</label>
               </div>
-              <div className="flex ">
+              <div className="flex">
                 <input
-                  className="w-full outline-0  rounded-sm bg-transparent border-b-2 border-black"
+                  className="w-full outline-0 rounded-sm bg-transparent border-b-2 border-black"
                   type="password"
+                  id="password"
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

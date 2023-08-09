@@ -57,7 +57,7 @@ export default function ForgotPassword() {
     <> 
     <MetaData title={'Forgot Password'} />
     <div
-      className="w-full h-screen flex items-center justify-center text-black login"
+      className="w-full h-screen flex items-center justify-center text-black bg"
       id="login"
     >
       <div className="w-11/12 sm:w-2/5 md:w-1/5 rounded-md  form-glass py-7 px-5">

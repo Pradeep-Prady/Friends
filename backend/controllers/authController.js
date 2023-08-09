@@ -20,7 +20,6 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
     BASE_URL = `${req.protocol}://${req.get("host")}`;
   }
 
-
   if (req.file) {
     avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`;
   }
@@ -112,8 +111,10 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   try {
     sendEmail({
       email: user.email,
-      subject: "Narikootam Password Recovery",
-      message: message,
+      subject: "Reset Your Password - Narikootam",
+      // message: message,
+      utl: resetUrl,
+      name: user.name,
     });
 
     res.status(200).json({
@@ -224,7 +225,7 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
 
 exports.getAllUsers = catchAsyncError(async (req, res, next) => {
   const users = await User.find();
-  
+
   res.status(200).json({
     success: true,
     users,
@@ -255,7 +256,7 @@ exports.updateUser = catchAsyncError(async (req, res, next) => {
     email: req.body.email,
     role: req.body.role,
   };
- 
+
   const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
     new: true,
     runValidators: true,
@@ -276,7 +277,6 @@ exports.deleteUser = catchAsyncError(async (req, res, next) => {
       new ErrorHandler(`User not found with this id ${req.params.id}`)
     );
   }
-  
 
   // await user.remove();
   await User.findByIdAndDelete(req.params.id);

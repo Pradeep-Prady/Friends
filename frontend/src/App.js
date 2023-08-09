@@ -78,7 +78,7 @@ function App() {
             />
 
             <Route
-              path="/gang/images"
+              path="/gang/images/:id"
               element={
                 <ProtectedRoute>
                   <GangImages />
