@@ -61,7 +61,7 @@ export default function AdminGangImages() {
                   </button>
                 </Link>
               </div>
-              <p>Images Count 83</p>
+              <p>Images Count {gangImages?.length}</p>
             </div>
             <div>
               {/* <div className="flex justify-evenly items-center mt-3">

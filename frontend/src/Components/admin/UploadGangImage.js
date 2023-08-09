@@ -73,8 +73,7 @@ export default function UploadGangImage() {
           color: "white",
         },
       });
-      clearError();
-
+      dispatch(clearError());
       return;
     }
   }, [isGangImageCreated, error, dispatch, navigate]);

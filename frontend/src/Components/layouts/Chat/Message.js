@@ -24,70 +24,73 @@ export default function Message({ chat }) {
   };
   var formattedTime = date.toLocaleTimeString("en-GB", optionsTime);
 
+  // console.log(chat._id);
   return (
-    <div
-      className={`w-full my-2 text-white   overflow-hidden ${
-        chat?.user?._id !== user?._id ? "flex justify-start" : "flex justify-end"
-      }`}
-    >
-      {chat?.user?._id !== user._id ? (
-        <>
-          <div className="flex w-10/12 p-2 mglass rounded-md">
-            <div className="w-3/12 md:w-2/12 flex items-start justify-center">
-              <img
-                src={chat?.user?.avatar ?? img}
-                alt="Message-User"
-                className="rounded-3xl w-[40px] h-[40px]"
-              />
-            </div>
-            <div className="w-10/12 ml-1">
-              <div>
-                <span className="text-xs text-stone-500">{chat?.user?.name}</span>
+    <>
+      <div
+        className={`w-full my-2 text-white   overflow-hidden ${
+          chat?.user !== user?._id
+            ? "flex justify-start"
+            : "flex justify-end"
+        }`}
+      >
+        {chat?.user !== user._id ? (
+          <>
+            <div className="flex w-10/12 p-2 mglass rounded-md">
+              <div className="w-3/12 md:w-2/12 flex items-start justify-center">
+                <img
+                  src={chat?.avatar ?? img}
+                  alt="Message-User"
+                  className="rounded-3xl w-[40px] h-[40px]"
+                />
               </div>
-              <div className="text-black">
-                <p className="text-sm">{chat?.text}</p>
-              </div>
+              <div className="w-10/12 ml-1">
+                <div>
+                  <span className="text-xs text-stone-500">
+                    {chat?.name}
+                  </span>
+                </div>
+                <div className="text-black">
+                  <p className="text-sm">{chat?.text}</p>
+                </div>
 
-              <div className="text-stone-500 w-full flex justify-between">
-                <span className="text-xs ">{formattedTime}</span>
-                <span className="text-xs ">{formattedDate}</span>
-
-              </div>
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="flex w-10/12 p-2 mglass  rounded-md">
-            <div className="w-9/12 md:10/12  ">
-
-              <div className="w-full text-end">
-                <span className="text-xs text-stone-500 ">
-        
-                  {chat?.user?.name}{" "}
-                </span>
-              </div>
-              <div className="w-full md:10/12 text-end text-black">
-                <p className="text-sm">{chat?.text}</p>
-              </div>
-
-              <div className="text-stone-500 w-full flex justify-between">
-                <span className="text-xs ">{formattedTime}</span>
-                <span className="text-xs ">{formattedDate}</span>
-
+                <div className="text-stone-500 w-full flex justify-between">
+                  <span className="text-xs ">{formattedTime}</span>
+                  <span className="text-xs ">{formattedDate}</span>
+                </div>
               </div>
             </div>
+          </>
+        ) : (
+          <>
+            <div className="flex w-10/12 p-2 mglass  rounded-md">
+              <div className="w-9/12 md:10/12  ">
+                <div className="w-full text-end">
+                  <span className="text-xs text-stone-500 ">
+                    {chat?.name}{" "}
+                  </span>
+                </div>
+                <div className="w-full md:10/12 text-end text-black">
+                  <p className="text-sm">{chat?.text}</p>
+                </div>
 
-            <div className="w-3/12 md:w-2/12 flex items-start justify-center">
-              <img
-                src={chat?.user?.avatar ?? img}
-                alt="Message-User"
-                className="rounded-3xl w-[40px] h-[40px]"
-              />
+                <div className="text-stone-500 w-full flex justify-between">
+                  <span className="text-xs ">{formattedTime}</span>
+                  <span className="text-xs ">{formattedDate}</span>
+                </div>
+              </div>
+
+              <div className="w-3/12 md:w-2/12 flex items-start justify-center">
+                <img
+                  src={chat?.avatar ?? img}
+                  alt="Message-User"
+                  className="rounded-3xl w-[40px] h-[40px]"
+                />
+              </div>
             </div>
-          </div>
-        </>
-      )}
-    </div>
+          </>
+        )}
+      </div>
+    </>
   );
 }

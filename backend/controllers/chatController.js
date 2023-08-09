@@ -5,7 +5,7 @@ const User = require("../models/userModel");
 const ErrorHandler = require("../utils/errorHandler");
 
 exports.getChats = catchAsyncError(async (req, res, next) => {
-  const gang_chats = await Chat.find().populate("user", "name avatar");
+  const gang_chats = await Chat.find();
 
   // try {
   //   for (const chat of gang_chats) {
@@ -18,7 +18,7 @@ exports.getChats = catchAsyncError(async (req, res, next) => {
   //     // chat.name = user.name;
   //     // chat.avatar = user.avatar;
   //     // console.log(chat)
-      
+
   //   }
 
   //   // Rest of your code here
@@ -73,8 +73,6 @@ exports.createChat = catchAsyncError(async (req, res, next) => {
 
   req.body.user = req.user.id;
 
-  const chat = await Chat.create(req.body);
-
   // const chats = await Chat.find();
 
   // try {
@@ -94,6 +92,17 @@ exports.createChat = catchAsyncError(async (req, res, next) => {
   //   // Handle the error
   //   next(error);
   // }
+
+  // if (chat) {
+  //   if (chat.user) {
+  //     const user = await User.findById(chat.user);
+  const user = req.user;
+  req.body.name = user.name;
+  req.body.avatar = user.avatar;
+  //   }
+  // }
+
+  const chat = await await Chat.create(req.body);
 
   res.status(201).json({
     success: true,

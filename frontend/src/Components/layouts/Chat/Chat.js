@@ -5,10 +5,15 @@ import { getChats, sendMessage } from "./../../../actions/chatActions";
 import MetaData from "../MetaData";
 import Loader from "./../Loader";
 import { clearChatCreated } from "../../../slices/chatSlice";
+// import Pusher from "pusher";
+import Pusher from "pusher-js/with-encryption";
+import axios from "axios";
 
 export default function Chat() {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
+
+  const [messages, setMessages] = useState([]);
 
   const { chats, loading, isChatCreated } = useSelector(
     (state) => state.chatsState
@@ -21,26 +26,52 @@ export default function Chat() {
     formData.append("text", text);
     dispatch(sendMessage(formData));
     setText("");
+    dispatch(clearChatCreated());
   };
 
   useEffect(() => {
-    if (isChatCreated) {
-      dispatch(getChats());
-      dispatch(clearChatCreated());
-    }
+    // if (isChatCreated) {
+    //   dispatch(getChats());
+    //   dispatch(clearChatCreated());
+    // }
     dispatch(getChats());
   }, [dispatch, isChatCreated]);
 
-  const chatContainerRef = useRef(null);
+  // const chatContainerRef = useRef(null);
 
-  // Scroll to the bottom of the chat container whenever new messages are added
+  // // Scroll to the bottom of the chat container whenever new messages are added
 
-  if (chatContainerRef.current) {
-    if (chatContainerRef.current.scrollTop === 0) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
-    }
-  }
+  // if (chatContainerRef.current) {
+  //   if (chatContainerRef.current.scrollTop === 0) {
+  //     chatContainerRef.current.scrollTop =
+  //       chatContainerRef.current.scrollHeight;
+  //   }
+  // }
+
+  useEffect(() => {
+    axios.get("/api/v1/chats").then((response) => {
+      setMessages(response.data.gang_chats);
+    });
+  }, []);
+
+  useEffect(() => {
+    const pusher = new Pusher("063411480e1c559a7529", {
+      cluster: "ap2",
+    });
+
+    const channel = pusher.subscribe("messages");
+    channel.bind("inserted", (newMessage) => {
+      // alert(JSON.stringify(newMessage));
+      setMessages([...messages, newMessage]);
+    });
+
+    return () => {
+      channel.unbind_all();
+      channel.unsubscribe();
+    };
+  }, [messages]);
+
+  // console.log(messages);
 
   return (
     <>
@@ -52,11 +83,11 @@ export default function Chat() {
       <div className="w-full h-screen bg-stone-800 py-5 px-2 flex justify-center items-center">
         <div className="w-full h-full  bg rounded-md sm:w-3/5 md:w-2/5">
           <div
-            ref={chatContainerRef}
+            // ref={chatContainerRef}
             style={{ height: "90%" }}
             className=" w-full  p-2 overflow-y-scroll scroll"
           >
-            {chats?.map((chat) => (
+            {messages?.map((chat) => (
               <Message chat={chat} key={chat._id} />
             ))}
           </div>
