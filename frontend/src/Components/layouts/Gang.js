@@ -24,10 +24,8 @@ export default function Gang() {
       setScreenHeight(window.innerHeight);
     };
 
-    // Add an event listener to update the state when the window is resized
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener when the component is unmounted
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -35,7 +33,6 @@ export default function Gang() {
 
   return (
     <div className="w-full h-screen relative overflow-hidden flex items-center justify-center  ">
-     
       <motion.div
         className="absolute right-0 bottom-0  overflow-hidden"
         initial={{ x: "60vw", y: 0 }}

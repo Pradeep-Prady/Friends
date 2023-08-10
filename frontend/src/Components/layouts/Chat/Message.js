@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import img from "../../../assets/images/default_avatar.png";
 import { useSelector } from "react-redux";
 const moment = require("moment");
@@ -11,14 +11,13 @@ export default function Message({ chat }) {
   const time = moment(createdAt).local().format("h:mm A");
   const date = moment(createdAt).local().format("DD-MMM-YYYY");
 
-  // var strap = "2023-08-10T03:48:30.933+00:00";
-
-  // console.log(moment(strap).local().format("h:mm A"));
   return (
     <>
       <div
         className={`w-full my-2 text-white   overflow-hidden ${
-          chat?.user?._id !== user?._id ? "flex justify-start" : "flex justify-end"
+          chat?.user?._id !== user?._id
+            ? "flex justify-start"
+            : "flex justify-end"
         }`}
       >
         {chat?.user._id !== user._id ? (
@@ -33,7 +32,9 @@ export default function Message({ chat }) {
               </div>
               <div className="w-10/12 ml-1">
                 <div>
-                  <span className="text-xs text-stone-500">{chat?.user?.name}</span>
+                  <span className="text-xs text-stone-500">
+                    {chat?.user?.name}
+                  </span>
                 </div>
                 <div className="text-black">
                   <p className="text-sm">{chat?.text}</p>
@@ -51,7 +52,9 @@ export default function Message({ chat }) {
             <div className="flex w-10/12 p-2 mglass  rounded-md">
               <div className="w-9/12 md:10/12  ">
                 <div className="w-full text-end">
-                  <span className="text-xs text-stone-500 ">{chat?.user?.name} </span>
+                  <span className="text-xs text-stone-500 ">
+                    {chat?.user?.name}{" "}
+                  </span>
                 </div>
                 <div className="w-full md:10/12 text-end text-black">
                   <p className="text-sm">{chat?.text}</p>

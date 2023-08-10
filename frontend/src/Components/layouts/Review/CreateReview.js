@@ -22,7 +22,7 @@ export default function CreateReview() {
   useEffect(() => {
     if (isReviewSubmitted) {
       dispatch(clearReviewSubmitted());
-      toast.success("Gang Image Deleted Successfully", {
+      toast.success("Review Posted", {
         position: "bottom-center",
         duration: 2000,
         style: {

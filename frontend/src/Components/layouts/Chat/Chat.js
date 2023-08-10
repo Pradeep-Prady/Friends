@@ -3,9 +3,7 @@ import Message from "./Message";
 import { useDispatch, useSelector } from "react-redux";
 import { getChats, sendMessage } from "./../../../actions/chatActions";
 import MetaData from "../MetaData";
-import Loader from "./../Loader";
 import { clearChatCreated } from "../../../slices/chatSlice";
-// import Pusher from "pusher";
 import Pusher from "pusher-js/with-encryption";
 import axios from "axios";
 
@@ -15,10 +13,7 @@ export default function Chat() {
 
   const [messages, setMessages] = useState([]);
 
-  const { chats, loading, isChatCreated } = useSelector(
-    (state) => state.chatsState
-  );
-  const { isAuthenticated } = useSelector((state) => state.authState);
+  const { isChatCreated } = useSelector((state) => state.chatsState);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -30,20 +25,13 @@ export default function Chat() {
   };
 
   useEffect(() => {
-    // if (isChatCreated) {
-    //   dispatch(getChats());
-    //   dispatch(clearChatCreated());
-    // }
     dispatch(getChats());
   }, [dispatch, isChatCreated]);
 
   const chatContainerRef = useRef(null);
 
-  // Scroll to the bottom of the chat container whenever new messages are added
-
   useEffect(() => {
     axios.get("/api/v1/chats").then((response) => {
-      // console.log(response);
       setMessages(response.data.gang_chats);
     });
   }, []);
@@ -55,7 +43,6 @@ export default function Chat() {
 
     const channel = pusher.subscribe("messages");
     channel.bind("inserted", (newMessage) => {
-      // alert(JSON.stringify(newMessage));
       setMessages([...messages, newMessage]);
     });
 
@@ -70,14 +57,8 @@ export default function Chat() {
     };
   }, [messages]);
 
-  // console.log(messages);
-
   return (
     <>
-      {/* {loading ? (
-        <Loader />
-      ) : (
-        <> */}{" "}
       <MetaData title={"Chat"} />{" "}
       <div className="w-full h-screen bg-stone-800 py-5 px-2 flex justify-center items-center">
         <div className="w-full h-full  bg rounded-md sm:w-3/5 md:w-2/5">
@@ -108,7 +89,5 @@ export default function Chat() {
         </div>
       </div>
     </>
-    //   )}
-    // </>
   );
 }

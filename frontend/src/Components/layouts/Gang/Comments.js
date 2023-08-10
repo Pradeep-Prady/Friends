@@ -18,7 +18,6 @@ function Comments({ id, commentsData }) {
     (state) => state.gangImageState
   );
 
-  const { user } = useSelector((state) => state.authState);
 
   const dispatch = useDispatch();
 
@@ -43,6 +42,7 @@ function Comments({ id, commentsData }) {
     formData.append("content", content);
     formData.append("gangImageId", id);
     dispatch(createGangImageComment(formData));
+    setContent("");
   };
 
   useEffect(() => {
@@ -72,6 +72,7 @@ function Comments({ id, commentsData }) {
             <input
               type="text "
               name="content"
+              value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Type your Comment"
               className="w-4/5 p-2 bg-transparent outline-none text-black border-r-4"

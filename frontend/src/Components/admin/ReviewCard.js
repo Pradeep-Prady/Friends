@@ -31,7 +31,7 @@ export default function ReviewCard({ review }) {
     <div onClick={gotoDetail} className="bg-stone-900 m-2  rounded-sm p-2 px-4">
       <div className="flex items-center justify-between text-stone-500">
         <img
-          src={review.user.avatar}
+          src={review?.user?.avatar}
           alt="user-avatar"
           className="w-[50px] h-[50px] rounded-md"
         />
