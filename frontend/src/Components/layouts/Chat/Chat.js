@@ -43,6 +43,7 @@ export default function Chat() {
 
   useEffect(() => {
     axios.get("/api/v1/chats").then((response) => {
+      console.log(response);
       setMessages(response.data.gang_chats);
     });
   }, []);
@@ -54,7 +55,7 @@ export default function Chat() {
 
     const channel = pusher.subscribe("messages");
     channel.bind("inserted", (newMessage) => {
-      // alert(JSON.stringify(newMessage));
+      alert(JSON.stringify(newMessage));
       setMessages([...messages, newMessage]);
     });
 

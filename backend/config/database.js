@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Pusher = require("pusher");
+const User = require("../models/userModel");
 
 const connectDatabase = () => {
   mongoose
@@ -25,30 +26,61 @@ const pusher = new Pusher({
   useTLS: true,
 });
 
+// const db = mongoose.connection;
+
+// db.once("open", () => {
+//   const chatCollection = db.collection("chats");
+//   const changeStream = chatCollection.watch();
+
+//   changeStream.on("change", (change) => {
+//     if (change.operationType === "insert") {
+//       const messageDetails = change.fullDocument;
+//       pusher.trigger("messages", "inserted", {
+//         createdAt: messageDetails.createdAt,
+//         text: messageDetails.text,
+//         user: messageDetails.user,
+//         name: messageDetails.name,
+//         avatar: messageDetails.avatar,
+//       });
+//     } else {
+//       console.log("Error triggering Pusher");
+//     }
+//   });
+// });
+
 const db = mongoose.connection;
 
 db.once("open", () => {
-  console.log("db is connected");
-
   const chatCollection = db.collection("chats");
   const changeStream = chatCollection.watch();
-  // console.log(changeStream)
 
-  changeStream.on("change", (change) => {
-    // console.log("change stream", change);
-
+  changeStream.on("change", async (change) => {
     if (change.operationType === "insert") {
       const messageDetails = change.fullDocument;
-      console.log(messageDetails);
-      pusher.trigger("messages", "inserted", {
-        createdAt: messageDetails.createdAt,
-        text: messageDetails.text,
-        user: messageDetails.user,
-        name: messageDetails.name,
-        avatar: messageDetails.avatar
 
-        // user_name: messageDetails.user
-      });
+      try {
+        // Assuming messageDetails.user is an ObjectId
+        const user = await User.findById(messageDetails.user);
+       
+        if (user) {
+          const userObj = {
+            _id: user._id,
+            name: user.name,
+            avatar: user.avatar,
+          };
+
+          pusher.trigger("messages", "inserted", {
+            createdAt: messageDetails.createdAt,
+            text: messageDetails.text,
+            user: userObj,
+          });
+           
+        } else {
+          console.log("User not found");
+        }
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      }
     } else {
       console.log("Error triggering Pusher");
     }

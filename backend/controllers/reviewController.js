@@ -18,7 +18,8 @@ exports.getReviews = catchAsyncError(async (req, res, next) => {
 });
 
 exports.getReview = catchAsyncError(async (req, res, next) => {
-  const review = await Review.findById(req.params.id).populate("user", "name email avatar")
+  const review = await Review.findById(req.params.id).populate("user", "name avatar");
+
 
   if (!review) {
     return next(new ErrorHandler("Review not found", 404));
@@ -32,6 +33,10 @@ exports.getReview = catchAsyncError(async (req, res, next) => {
 
 exports.createReview = catchAsyncError(async (req, res, next) => {
   req.body.user = req.user.id;
+
+  // const user = req.user;
+  // req.body.name = user.name;
+  // req.body.avatar = user.avatar;
 
   const review = await Review.create(req.body);
 
