@@ -37,16 +37,9 @@ export default function Chat() {
     dispatch(getChats());
   }, [dispatch, isChatCreated]);
 
-  // const chatContainerRef = useRef(null);
+  const chatContainerRef = useRef(null);
 
-  // // Scroll to the bottom of the chat container whenever new messages are added
-
-  // if (chatContainerRef.current) {
-  //   if (chatContainerRef.current.scrollTop === 0) {
-  //     chatContainerRef.current.scrollTop =
-  //       chatContainerRef.current.scrollHeight;
-  //   }
-  // }
+  // Scroll to the bottom of the chat container whenever new messages are added
 
   useEffect(() => {
     axios.get("/api/v1/chats").then((response) => {
@@ -64,6 +57,11 @@ export default function Chat() {
       // alert(JSON.stringify(newMessage));
       setMessages([...messages, newMessage]);
     });
+
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
 
     return () => {
       channel.unbind_all();
@@ -83,7 +81,7 @@ export default function Chat() {
       <div className="w-full h-screen bg-stone-800 py-5 px-2 flex justify-center items-center">
         <div className="w-full h-full  bg rounded-md sm:w-3/5 md:w-2/5">
           <div
-            // ref={chatContainerRef}
+            ref={chatContainerRef}
             style={{ height: "90%" }}
             className=" w-full  p-2 overflow-y-scroll scroll"
           >

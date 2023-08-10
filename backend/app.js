@@ -13,31 +13,17 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.set("trust proxy", true);
+
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
-
-
-
-
-
-
 
 const pusher = new Pusher({
   appId: "1649100",
   key: "063411480e1c559a7529",
   secret: "8640ab9c04d92c06f903",
   cluster: "ap2",
-  useTLS: true
+  useTLS: true,
 });
-
-
-
-
-
-
-
-
-
 
 const auth = require("./routes/auth");
 const gang = require("./routes/gang");
@@ -52,7 +38,6 @@ app.use("/api/v1", gang);
 app.use("/api/v1", usergang);
 app.use("/api/v1/", review);
 
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
   app.get("*", (req, res) => {
@@ -61,10 +46,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //DB_LOCAL_URI=mongodb+srv://pradeep:qJzT-aKB649Pn_.@narikootam.j9cqh4k.mongodb.net/Narikootam?retryWrites=true&w=majority
- 
 
 // DB_LOCAL_URI=mongodb://127.0.0.1:27017/Narikootam
-
 
 app.use(errorMidleware);
 
